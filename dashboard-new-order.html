@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>New Print Job | Sharpline Print &amp; Copy Co.</title>
+<meta name="description" content="Upload your file, choose paper size, binding and copies, and get an instant price estimate for your print job." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%234338CA'/%3E%3Cpath d='M7 8V4h10v4M6 17H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-2' stroke='white' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='7' y='13' width='10' height='7' fill='white'/%3E%3C/svg%3E" />
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem('sharpline-theme');
+      if (!theme) theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('dir', localStorage.getItem('sharpline-dir') || 'ltr');
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css" />
+<style>
+  .field-input{width:100%;padding:.7rem 1rem;border-radius:8px;border:1px solid var(--border);background:var(--bg-elevated);color:var(--text)}
+  .field-input:focus{outline:none;border-color:var(--c-blue-600);box-shadow:0 0 0 3px rgba(67,56,202,.15)}
+  .field-label{font-size:.85rem;font-weight:600;margin-bottom:.4rem;display:block}
+  .field-error{color:var(--c-magenta-600);font-size:.78rem;margin-top:.35rem}
+  .turnaround-option{border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;cursor:pointer}
+  .turnaround-option:has(input:checked){border-color:var(--c-blue-600);background:var(--tint-blue)}
+</style>
+</head>
+<body data-area="dashboard" data-page="new-order" data-page-title="New Print Job">
+<div id="toast-root"></div>
+<div id="dash-sidebar-root"></div>
+
+<div class="lg:ps-72 min-h-screen flex flex-col">
+  <div id="dash-topbar-root"></div>
+
+  <main id="main-content" class="flex-1 p-4 sm:p-6 lg:p-8">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="font-display text-2xl sm:text-3xl mb-1">START A NEW PRINT JOB</h1>
+      <p class="text-sm mb-8" style="color:var(--text-muted)">Upload your file, choose specs, and see your price update instantly.</p>
+
+      <form id="new-order-form" class="grid lg:grid-cols-5 gap-8" novalidate>
+        <div class="lg:col-span-3 space-y-6">
+
+          <div>
+            <label class="field-label">Your file</label>
+            <div id="upload-zone" class="upload-zone p-8 text-center cursor-pointer" tabindex="0" role="button" aria-label="Upload your print file">
+              <p id="upload-placeholder">
+                <span class="block text-3xl mb-2">📄</span>
+                <span class="font-medium">Drag &amp; drop your file here</span><br />
+                <span class="text-sm" style="color:var(--text-muted)">or click to browse &mdash; PDF, AI, PNG, JPG or DOCX</span>
+              </p>
+              <p id="file-name-display" class="hidden font-mono text-sm px-3 py-2 rounded inline-block" style="background:var(--bg-dim)"></p>
+            </div>
+            <input type="file" id="file-input" class="hidden" accept=".pdf,.ai,.png,.jpg,.jpeg,.docx" />
+            <p class="field-error hidden" data-error-for="file">Please attach a file before submitting.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="field-label" for="service">Service</label>
+              <select class="field-input" id="service" name="service" data-validate="required">
+                <option value="documents">Document Printing</option>
+                <option value="business-cards">Business Cards</option>
+                <option value="banners">Banners &amp; Signs</option>
+                <option value="photos">Photo Prints</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="paperSize">Paper / Size</label>
+              <select class="field-input" id="paperSize" name="paperSize" data-validate="required">
+                <option>A4</option>
+                <option>A3</option>
+                <option>Letter</option>
+                <option>Legal</option>
+                <option>3.5x2 in</option>
+                <option>4x6 in</option>
+                <option>5x7 in</option>
+                <option>8x10 in</option>
+                <option>3ft x 6ft</option>
+                <option>3ft x 10ft</option>
+                <option>18x24 in</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="color">Color</label>
+              <select class="field-input" id="color" name="color">
+                <option>Full Color</option>
+                <option>Black &amp; White</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="sides">Sides</label>
+              <select class="field-input" id="sides" name="sides">
+                <option>Single-sided</option>
+                <option>Double-sided</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="binding">Finishing</label>
+              <select class="field-input" id="binding" name="binding">
+                <option>None</option>
+                <option>Stapled</option>
+                <option>Spiral Bound</option>
+                <option>Hardcover</option>
+                <option>Matte Finish</option>
+                <option>Glossy Finish</option>
+                <option>Grommets</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="copies">Copies</label>
+              <div class="flex items-center gap-2" data-qty-control>
+                <button type="button" class="btn btn-outline btn-sm !px-3" data-qty-step="-1" aria-label="Decrease copies">&minus;</button>
+                <input class="field-input text-center" type="number" id="copies" name="copies" value="1" min="1" max="500" data-validate="required" />
+                <button type="button" class="btn btn-outline btn-sm !px-3" data-qty-step="1" aria-label="Increase copies">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label class="field-label">Turnaround</label>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <label class="turnaround-option flex items-center gap-3">
+                <input type="radio" name="turnaround" value="Standard" checked />
+                <span><span class="block font-medium">Standard</span><span class="text-xs" style="color:var(--text-muted)">Ready in 24&ndash;48 hours</span></span>
+              </label>
+              <label class="turnaround-option flex items-center gap-3">
+                <input type="radio" name="turnaround" value="Rush" />
+                <span><span class="block font-medium">Rush (+50%)</span><span class="text-xs" style="color:var(--text-muted)">Ready same day</span></span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label class="field-label" for="notes">Notes for our team <span class="font-normal" style="color:var(--text-muted)">(optional)</span></label>
+            <textarea class="field-input" id="notes" name="notes" rows="3" placeholder="e.g. trim to bleed, match Pantone 286C, deliver to front desk&hellip;"></textarea>
+          </div>
+        </div>
+
+        <aside class="lg:col-span-2">
+          <div class="ticket-card p-6 lg:sticky lg:top-24">
+            <span class="ticket-clip" aria-hidden="true"></span>
+            <h2 class="font-display text-lg mb-4">ORDER SUMMARY</h2>
+            <p class="text-sm" style="color:var(--text-muted)">Estimated total</p>
+            <p class="price-tag text-4xl mt-1" id="price-estimate">$0.00</p>
+            <p class="text-xs mt-2" style="color:var(--text-muted)">Final price confirmed once we review your file.</p>
+            <div class="ticket-tear pt-5 mt-5">
+              <button type="submit" class="btn btn-primary w-full">Submit Print Job</button>
+              <p class="text-xs text-center mt-3" style="color:var(--text-muted)">You&rsquo;ll get a job code and can track status from My Orders.</p>
+            </div>
+          </div>
+        </aside>
+      </form>
+    </div>
+  </main>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/dashboard.js" defer></script>
+</body>
+</html>

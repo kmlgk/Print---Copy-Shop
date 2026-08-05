@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Home 2 &mdash; Sharpline Print &amp; Copy Co.</title>
+<meta name="description" content="See Sharpline's craft: featured print work, our process, and why Springfield businesses trust us with documents, cards, banners and photos." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%234338CA'/%3E%3Cpath d='M7 8V4h10v4M6 17H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-2' stroke='white' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='7' y='13' width='10' height='7' fill='white'/%3E%3C/svg%3E" />
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem('sharpline-theme');
+      if (!theme) theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('dir', localStorage.getItem('sharpline-dir') || 'ltr');
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-area="public">
+<div id="toast-root"></div>
+<header id="site-header"></header>
+<div id="mobile-drawer-root"></div>
+
+<main id="main-content">
+
+  <!-- HERO : split-screen, single framed image + floating stat card -->
+  <section class="container-shop pt-14 pb-20 sm:pt-20">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div data-reveal="left">
+        <span class="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-mono tracking-wide" style="background:var(--tint-magenta);color:var(--c-magenta-600)">OUR CRAFT</span>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[0.98] mt-5">Every job gets a press check, not a guess.</h1>
+        <p class="mt-5 text-lg" style="color:var(--text-muted)">Sharpline is a neighborhood print shop with a commercial-grade press room. We colour-match, proof, and finish every order in-house &mdash; then track it for you from upload to pickup.</p>
+        <div class="flex flex-wrap gap-4 mt-8">
+          <a href="about.html" class="btn btn-primary">Our Story</a>
+          <a href="gallery.html" class="btn btn-outline">See Our Work</a>
+        </div>
+      </div>
+      <div class="relative h-[340px] sm:h-[440px] lg:h-[480px] mb-10 sm:mb-0" data-reveal="right">
+        <div class="crop-mark tl hidden sm:block" style="color:var(--c-blue-600)"></div>
+        <div class="crop-mark br hidden sm:block" style="color:var(--c-blue-600)"></div>
+        <img src="https://images.unsplash.com/photo-1693031630369-bd429a57f115?auto=format&fit=crop&w=1000&q=80" alt="Large-format digital printing machine producing a full-color run" class="w-full h-full object-cover rounded-2xl shadow-2xl" loading="eager" />
+        <div class="absolute -bottom-8 start-4 sm:start-8 ticket-card !flex-row !h-auto items-center gap-4 py-3 px-4 max-w-[240px]">
+          <span class="ticket-clip" aria-hidden="true"></span>
+          <span class="text-2xl">&#127775;</span>
+          <div>
+            <p class="font-display text-lg leading-none">4.9<span class="text-sm font-body font-normal" style="color:var(--text-muted)">/5</span></p>
+            <p class="text-xs mt-1" style="color:var(--text-muted)">From 600+ local reviews</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="py-14" style="background:var(--ink-900);color:#fff">
+    <div class="container-shop grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+      <div data-reveal="up"><p class="stat-num text-3xl sm:text-4xl font-bold"><span data-countup="12">0</span> yrs</p><p class="text-white/60 text-sm mt-1">In business</p></div>
+      <div data-reveal="up"><p class="stat-num text-3xl sm:text-4xl font-bold"><span data-countup="18400" data-countup-suffix="+">0</span></p><p class="text-white/60 text-sm mt-1">Jobs completed</p></div>
+      <div data-reveal="up"><p class="stat-num text-3xl sm:text-4xl font-bold"><span data-countup="98" data-countup-suffix="%">0</span></p><p class="text-white/60 text-sm mt-1">On-time rate</p></div>
+      <div data-reveal="up"><p class="stat-num text-3xl sm:text-4xl font-bold"><span data-countup="6">0</span></p><p class="text-white/60 text-sm mt-1">Press operators</p></div>
+    </div>
+  </section>
+
+  <!-- WHAT WE PRINT : icon-chip strip -->
+  <section class="container-shop py-16">
+    <div class="flex gap-3 overflow-x-auto pb-2" data-reveal="up">
+      <a href="services.html#documents" class="filter-btn shrink-0 flex items-center gap-2 px-5 py-3 rounded-full border text-sm font-medium" style="border-color:var(--border)">📄 Documents</a>
+      <a href="services.html#business-cards" class="filter-btn shrink-0 flex items-center gap-2 px-5 py-3 rounded-full border text-sm font-medium" style="border-color:var(--border)">🪪 Business Cards</a>
+      <a href="services.html#banners" class="filter-btn shrink-0 flex items-center gap-2 px-5 py-3 rounded-full border text-sm font-medium" style="border-color:var(--border)">🏳️ Banners &amp; Signs</a>
+      <a href="services.html#photo-prints" class="filter-btn shrink-0 flex items-center gap-2 px-5 py-3 rounded-full border text-sm font-medium" style="border-color:var(--border)">🖼️ Photo Prints</a>
+      <a href="pricing.html" class="filter-btn shrink-0 flex items-center gap-2 px-5 py-3 rounded-full border text-sm font-medium" style="border-color:var(--border)">💲 Full Pricing</a>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK : interactive category showcase -->
+  <section class="container-shop pb-20">
+    <div class="max-w-2xl mb-10" data-reveal="up">
+      <span class="font-mono text-xs tracking-widest" style="color:var(--c-blue-600)">FEATURED WORK</span>
+      <h2 class="font-display text-3xl sm:text-4xl mt-2">Pick a category, see the craft.</h2>
+    </div>
+
+    <div data-tabs class="grid lg:grid-cols-5 gap-6 items-stretch">
+
+      <div class="lg:col-span-2 flex flex-col gap-3" role="tablist" aria-label="Featured work categories" data-reveal="left">
+        <button type="button" role="tab" data-tab-trigger="documents" aria-selected="true" class="is-active-tab w-full flex items-start gap-4 p-5 rounded-2xl border text-start transition-colors" style="border-color:var(--border)">
+          <span class="w-11 h-11 rounded-xl flex items-center justify-center text-lg shrink-0" style="background:var(--tint-blue);color:var(--c-blue-600)">&#128196;</span>
+          <span class="flex-1">
+            <span class="block font-display text-base">DOCUMENTS</span>
+            <span class="block text-sm opacity-70 mt-1">Reports, manuals &amp; handouts, bound to spec</span>
+          </span>
+          <span class="font-mono text-xs opacity-60 shrink-0 mt-1">01</span>
+        </button>
+        <button type="button" role="tab" data-tab-trigger="business-cards" aria-selected="false" class="w-full flex items-start gap-4 p-5 rounded-2xl border text-start transition-colors hover:border-[var(--c-blue-300)]" style="border-color:var(--border)">
+          <span class="w-11 h-11 rounded-xl flex items-center justify-center text-lg shrink-0" style="background:var(--tint-magenta);color:var(--c-magenta-600)">&#128179;</span>
+          <span class="flex-1">
+            <span class="block font-display text-base">BUSINESS CARDS</span>
+            <span class="block text-sm opacity-70 mt-1">Matte, glossy or uncoated, cut to spec</span>
+          </span>
+          <span class="font-mono text-xs opacity-60 shrink-0 mt-1">02</span>
+        </button>
+        <button type="button" role="tab" data-tab-trigger="banners" aria-selected="false" class="w-full flex items-start gap-4 p-5 rounded-2xl border text-start transition-colors hover:border-[var(--c-blue-300)]" style="border-color:var(--border)">
+          <span class="w-11 h-11 rounded-xl flex items-center justify-center text-lg shrink-0" style="background:var(--tint-yellow)">&#127937;</span>
+          <span class="flex-1">
+            <span class="block font-display text-base">BANNERS &amp; SIGNS</span>
+            <span class="block text-sm opacity-70 mt-1">Weatherproof vinyl, grommets included</span>
+          </span>
+          <span class="font-mono text-xs opacity-60 shrink-0 mt-1">03</span>
+        </button>
+        <button type="button" role="tab" data-tab-trigger="photo-prints" aria-selected="false" class="w-full flex items-start gap-4 p-5 rounded-2xl border text-start transition-colors hover:border-[var(--c-blue-300)]" style="border-color:var(--border)">
+          <span class="w-11 h-11 rounded-xl flex items-center justify-center text-lg shrink-0" style="background:var(--tint-blue);color:var(--c-blue-600)">&#128247;</span>
+          <span class="flex-1">
+            <span class="block font-display text-base">PHOTO PRINTS</span>
+            <span class="block text-sm opacity-70 mt-1">True photo stock, accurate skin tones</span>
+          </span>
+          <span class="font-mono text-xs opacity-60 shrink-0 mt-1">04</span>
+        </button>
+      </div>
+
+      <div class="lg:col-span-3 relative rounded-3xl overflow-hidden min-h-[280px] sm:min-h-[420px]" data-reveal="right">
+        <div data-tab-panel="documents" role="tabpanel" class="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1526656001029-20a71b17f7ba?auto=format&fit=crop&w=1000&q=80" alt="Bound document sets and file folders ready for pickup" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 flex items-end p-6 sm:p-8" style="background:linear-gradient(to top, rgba(0,0,0,.78), transparent 55%)">
+            <div class="text-white"><span class="font-mono text-xs opacity-70">FEATURED JOB</span><p class="font-display text-xl sm:text-2xl mt-1">300-page training manual, spiral-bound</p></div>
+          </div>
+        </div>
+        <div data-tab-panel="business-cards" role="tabpanel" class="absolute inset-0 hidden">
+          <img src="https://images.unsplash.com/photo-1704030459032-fddf08f1cfa6?auto=format&fit=crop&w=1000&q=80" alt="Business cards on a marble counter" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 flex items-end p-6 sm:p-8" style="background:linear-gradient(to top, rgba(0,0,0,.78), transparent 55%)">
+            <div class="text-white"><span class="font-mono text-xs opacity-70">FEATURED JOB</span><p class="font-display text-xl sm:text-2xl mt-1">Matte-finish cards for a design studio</p></div>
+          </div>
+        </div>
+        <div data-tab-panel="banners" role="tabpanel" class="absolute inset-0 hidden">
+          <img src="https://images.unsplash.com/photo-1722020670872-78e4787344fb?auto=format&fit=crop&w=1000&q=80" alt="Grand opening storefront banner printed for a local boutique" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 flex items-end p-6 sm:p-8" style="background:linear-gradient(to top, rgba(0,0,0,.78), transparent 55%)">
+            <div class="text-white"><span class="font-mono text-xs opacity-70">FEATURED JOB</span><p class="font-display text-xl sm:text-2xl mt-1">Grand-opening banner &mdash; 3&times;8 ft vinyl</p></div>
+          </div>
+        </div>
+        <div data-tab-panel="photo-prints" role="tabpanel" class="absolute inset-0 hidden">
+          <img src="https://images.unsplash.com/photo-1571502187080-e56bdb6c503c?auto=format&fit=crop&w=1000&q=80" alt="Open photo book with a printed family portrait" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 flex items-end p-6 sm:p-8" style="background:linear-gradient(to top, rgba(0,0,0,.78), transparent 55%)">
+            <div class="text-white"><span class="font-mono text-xs opacity-70">FEATURED JOB</span><p class="font-display text-xl sm:text-2xl mt-1">Family portrait book, glossy finish</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-10" data-reveal="up"><a href="gallery.html" class="btn btn-outline">Browse Full Gallery</a></div>
+  </section>
+
+  <!-- PROCESS : vertical zig-zag -->
+  <section class="py-20" style="background:var(--bg-dim)">
+    <div class="container-shop">
+      <div class="max-w-2xl mb-14" data-reveal="up">
+        <span class="font-mono text-xs tracking-widest" style="color:var(--c-magenta-500)">OUR PROCESS</span>
+        <h2 class="font-display text-3xl sm:text-4xl mt-2">What happens after you hit submit.</h2>
+      </div>
+      <div class="space-y-14">
+        <div class="grid sm:grid-cols-2 gap-8 items-center" data-reveal="left">
+          <img src="https://images.unsplash.com/photo-1591462391971-9ffc57b382b9?auto=format&fit=crop&w=700&q=80" alt="Job specification sheet with sticky tabs" class="rounded-2xl w-full h-64 object-cover" loading="lazy" />
+          <div>
+            <span class="font-mono text-xs" style="color:var(--c-blue-600)">STEP 01</span>
+            <h3 class="font-display text-2xl mt-2">We check your file</h3>
+            <p class="mt-2" style="color:var(--text-muted)">Bleed, resolution and colour profile are verified before anything hits the press &mdash; we flag issues instead of printing them.</p>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-8 items-center" data-reveal="right">
+          <div class="sm:order-2">
+            <img src="https://images.unsplash.com/photo-1581079289196-67865ea83118?auto=format&fit=crop&w=700&q=80" alt="Pantone colour swatch matching in progress" class="rounded-2xl w-full h-64 object-cover" loading="lazy" />
+          </div>
+          <div class="sm:order-1">
+            <span class="font-mono text-xs" style="color:var(--c-blue-600)">STEP 02</span>
+            <h3 class="font-display text-2xl mt-2">We colour-match</h3>
+            <p class="mt-2" style="color:var(--text-muted)">Brand colours are checked against Pantone references so your cards, banners and reprints stay consistent every time.</p>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-8 items-center" data-reveal="left">
+          <img src="https://images.unsplash.com/photo-1680120885286-120389cb0018?auto=format&fit=crop&w=700&q=80" alt="Paper cutting and finishing machine trimming a print job" class="rounded-2xl w-full h-64 object-cover" loading="lazy" />
+          <div>
+            <span class="font-mono text-xs" style="color:var(--c-blue-600)">STEP 03</span>
+            <h3 class="font-display text-2xl mt-2">We finish &amp; trim</h3>
+            <p class="mt-2" style="color:var(--text-muted)">Binding, laminating, grommets or trimming &mdash; done in-house on the same day the job is printed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SHARPLINE : reasons grid -->
+  <section class="container-shop py-20">
+    <div class="max-w-2xl mb-12" data-reveal="up">
+      <span class="font-mono text-xs tracking-widest" style="color:var(--c-blue-600)">WHY SHARPLINE</span>
+      <h2 class="font-display text-3xl sm:text-4xl mt-2">Reasons Springfield businesses stick with us.</h2>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl border" style="border-color:var(--border)" data-reveal="up">
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center text-lg" style="background:var(--tint-blue);color:var(--c-blue-600)">🎯</div>
+        <h3 class="font-display text-lg mt-4">Colour-accurate press</h3>
+        <p class="text-sm mt-2" style="color:var(--text-muted)">Calibrated presses and Pantone proofing keep your brand colours consistent, job after job.</p>
+      </div>
+      <div class="p-6 rounded-2xl border" style="border-color:var(--border)" data-reveal="up">
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center text-lg" style="background:var(--tint-magenta);color:var(--c-magenta-600)">⏱️</div>
+        <h3 class="font-display text-lg mt-4">Real turnaround times</h3>
+        <p class="text-sm mt-2" style="color:var(--text-muted)">24-hour standard, same-day rush &mdash; and you can watch the status change from your dashboard.</p>
+      </div>
+      <div class="p-6 rounded-2xl border" style="border-color:var(--border)" data-reveal="up">
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center text-lg" style="background:var(--tint-yellow)">🔁</div>
+        <h3 class="font-display text-lg mt-4">One-click reorders</h3>
+        <p class="text-sm mt-2" style="color:var(--text-muted)">Every past job is saved on file &mdash; reorder identical specs without touching your file again.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS : ticket stack, prev/next -->
+  <section class="py-20" style="background:var(--bg-dim)">
+    <div class="container-shop max-w-2xl">
+      <div class="mb-10 text-center" data-reveal="up">
+        <span class="font-mono text-xs tracking-widest" style="color:var(--c-magenta-500)">CLIENT WORDS</span>
+        <h2 class="font-display text-3xl sm:text-4xl mt-2">Straight from the pickup counter.</h2>
+      </div>
+      <div id="testimonial-stack" class="relative h-64 sm:h-52" data-reveal="up">
+        <article class="quote-card absolute inset-0" data-stack-slide>
+          <p class="text-lg leading-relaxed" style="color:var(--text)">They caught a low-resolution logo before printing 500 cards &mdash; saved me from a reprint. That&rsquo;s the kind of shop I want handling my brand.</p>
+          <div class="flex items-center gap-3 mt-5">
+            <img src="https://i.pravatar.cc/64?img=33" alt="Portrait of Elena Marsh" class="w-10 h-10 rounded-full object-cover" loading="lazy" />
+            <div><p class="font-semibold text-sm">Elena Marsh</p><p class="text-xs" style="color:var(--text-muted)">Marsh &amp; Co. Consulting</p></div>
+          </div>
+        </article>
+        <article class="quote-card absolute inset-0 hidden" data-stack-slide>
+          <p class="text-lg leading-relaxed" style="color:var(--text)">Our nonprofit reorders the same donor report every quarter. It takes me seconds now &mdash; upload once, reorder forever.</p>
+          <div class="flex items-center gap-3 mt-5">
+            <img src="https://i.pravatar.cc/64?img=48" alt="Portrait of James Okafor" class="w-10 h-10 rounded-full object-cover" loading="lazy" />
+            <div><p class="font-semibold text-sm">James Okafor</p><p class="text-xs" style="color:var(--text-muted)">Springfield Youth Fund</p></div>
+          </div>
+        </article>
+        <article class="quote-card absolute inset-0 hidden" data-stack-slide>
+          <p class="text-lg leading-relaxed" style="color:var(--text)">I run a photography side business and their photo prints are noticeably sharper than the big-box chain I used before.</p>
+          <div class="flex items-center gap-3 mt-5">
+            <img src="https://i.pravatar.cc/64?img=9" alt="Portrait of Renee Castillo" class="w-10 h-10 rounded-full object-cover" loading="lazy" />
+            <div><p class="font-semibold text-sm">Renee Castillo</p><p class="text-xs" style="color:var(--text-muted)">Castillo Photography</p></div>
+          </div>
+        </article>
+      </div>
+      <div class="flex items-center justify-center gap-3 mt-6">
+        <button type="button" id="stack-prev" class="btn btn-ghost btn-sm" aria-label="Previous testimonial">&larr;</button>
+        <div id="stack-dots" class="flex gap-2" role="tablist" aria-label="Testimonial selector"></div>
+        <button type="button" id="stack-next" class="btn btn-ghost btn-sm" aria-label="Next testimonial">&rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA CLOSE : image-left / dark-panel-right -->
+  <section class="grid lg:grid-cols-2 min-h-[420px]">
+    <div class="relative min-h-[280px] lg:min-h-0" data-reveal="left">
+      <img src="https://images.unsplash.com/photo-1656646424401-2ae620092397?auto=format&fit=crop&w=1000&q=80" alt="Print shop counter ready to hand off a finished order" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+    </div>
+    <div class="flex items-center p-10 sm:p-16" style="background:var(--ink-900);color:#fff" data-reveal="right">
+      <div>
+        <h2 class="font-display text-3xl sm:text-4xl">Get your first job printed this week.</h2>
+        <p class="mt-4 text-white/70">Create a free account, upload your file, and choose your specs &mdash; pricing updates live as you go.</p>
+        <div class="flex flex-wrap gap-4 mt-8">
+          <a href="register.html" class="btn btn-primary">Create Free Account</a>
+          <a href="pricing.html" class="btn btn-outline !text-white !border-white hover:!bg-white hover:!text-[var(--ink-900)]">Compare Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer"></footer>
+<div id="back-to-top-root"></div>
+
+<script src="assets/js/main.js" defer></script>
+<script>
+  (function () {
+    var slides = document.querySelectorAll("#testimonial-stack [data-stack-slide]");
+    var dotsHost = document.getElementById("stack-dots");
+    var current = 0;
+    slides.forEach(function (_, i) {
+      var dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "w-2.5 h-2.5 rounded-full";
+      dot.style.background = i === 0 ? "var(--c-blue-600)" : "var(--border)";
+      dot.setAttribute("aria-label", "Show testimonial " + (i + 1));
+      dot.addEventListener("click", function () { show(i); });
+      dotsHost.appendChild(dot);
+    });
+    function show(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach(function (s, i) { s.classList.toggle("hidden", i !== current); });
+      Array.from(dotsHost.children).forEach(function (d, i) { d.style.background = i === current ? "var(--c-blue-600)" : "var(--border)"; });
+    }
+    document.getElementById("stack-prev").addEventListener("click", function () { show(current - 1); });
+    document.getElementById("stack-next").addEventListener("click", function () { show(current + 1); });
+  })();
+</script>
+</body>
+</html>

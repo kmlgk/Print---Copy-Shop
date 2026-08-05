@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services | Sharpline Print &amp; Copy Co.</title>
+<meta name="description" content="Explore Sharpline's print services: documents, business cards, banners & signs, and photo prints — specs, finishing options and pricing." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%234338CA'/%3E%3Cpath d='M7 8V4h10v4M6 17H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-2' stroke='white' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='7' y='13' width='10' height='7' fill='white'/%3E%3C/svg%3E" />
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem('sharpline-theme');
+      if (!theme) theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('dir', localStorage.getItem('sharpline-dir') || 'ltr');
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css" />
+<style>.spec-chip{font-family:var(--font-mono);font-size:.7rem;padding:.3rem .65rem;border-radius:999px;background:var(--bg-dim);border:1px solid var(--border)}</style>
+</head>
+<body data-area="public">
+<div id="toast-root"></div>
+<header id="site-header"></header>
+<div id="mobile-drawer-root"></div>
+
+<main id="main-content">
+
+  <!-- COMPACT BANNER HERO -->
+  <section class="relative py-16 sm:py-20 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <img src="https://images.unsplash.com/photo-1693031630146-568e2f72db0e?auto=format&fit=crop&w=1600&q=80" alt="Paper cutting and finishing machine at Sharpline" class="w-full h-full object-cover" loading="eager" />
+      <div class="absolute inset-0" style="background:rgba(20,22,28,.8)"></div>
+    </div>
+    <div class="container-shop">
+      <nav aria-label="Breadcrumb" class="text-xs text-white/60 mb-4" data-reveal="up"><a href="index.html" class="hover:text-white">Home</a> <span class="mx-1">/</span> <span class="text-white">Services</span></nav>
+      <h1 class="font-display text-4xl sm:text-6xl text-white" data-reveal="up">WHAT WE PRINT</h1>
+      <p class="text-white/70 mt-4 max-w-xl" data-reveal="up">Four core services, all proofed, colour-matched and finished in-house.</p>
+    </div>
+  </section>
+
+  <!-- STICKY SUB-NAV -->
+  <div class="sticky top-[98px] z-30 border-b" style="background:var(--header-bg);backdrop-filter:blur(14px);border-color:var(--border)">
+    <div class="container-shop flex gap-6 overflow-x-auto text-sm font-medium py-3">
+      <a href="#documents" class="shrink-0 hover:text-[var(--c-blue-600)]">Documents</a>
+      <a href="#business-cards" class="shrink-0 hover:text-[var(--c-blue-600)]">Business Cards</a>
+      <a href="#banners" class="shrink-0 hover:text-[var(--c-blue-600)]">Banners &amp; Signs</a>
+      <a href="#photo-prints" class="shrink-0 hover:text-[var(--c-blue-600)]">Photo Prints</a>
+    </div>
+  </div>
+
+  <!-- AT A GLANCE -->
+  <section class="container-shop py-16">
+    <div class="max-w-2xl mb-8" data-reveal="up">
+      <span class="font-mono text-xs tracking-widest" style="color:var(--c-blue-600)">AT A GLANCE</span>
+      <h2 class="font-display text-2xl sm:text-3xl mt-2">Which service is right for your job?</h2>
+    </div>
+    <div class="rounded-2xl border overflow-hidden" style="border-color:var(--border)" data-reveal="up">
+      <table class="price-table w-full text-sm">
+        <thead>
+          <tr class="text-left" style="background:var(--bg-dim)">
+            <th>Service</th>
+            <th class="hidden sm:table-cell">Best for</th>
+            <th class="hidden md:table-cell">Turnaround</th>
+            <th>Starting at</th>
+            <th class="sr-only">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="font-semibold">Documents</td>
+            <td class="hidden sm:table-cell" style="color:var(--text-muted)">Reports, manuals, handouts</td>
+            <td class="hidden md:table-cell" style="color:var(--text-muted)">24&ndash;48 hrs</td>
+            <td class="price-tag whitespace-nowrap">$0.12/pg</td>
+            <td class="text-end sm:text-start"><a href="#documents" class="font-medium hover:text-[var(--c-blue-600)]" style="color:var(--c-blue-600)">View &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Business Cards</td>
+            <td class="hidden sm:table-cell" style="color:var(--text-muted)">First impressions, networking</td>
+            <td class="hidden md:table-cell" style="color:var(--text-muted)">24&ndash;48 hrs</td>
+            <td class="price-tag whitespace-nowrap">$24.99/box</td>
+            <td class="text-end sm:text-start"><a href="#business-cards" class="font-medium hover:text-[var(--c-blue-600)]" style="color:var(--c-blue-600)">View &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Banners &amp; Signs</td>
+            <td class="hidden sm:table-cell" style="color:var(--text-muted)">Storefronts, events, yard signs</td>
+            <td class="hidden md:table-cell" style="color:var(--text-muted)">24&ndash;48 hrs</td>
+            <td class="price-tag whitespace-nowrap">$44.00/ea</td>
+            <td class="text-end sm:text-start"><a href="#banners" class="font-medium hover:text-[var(--c-blue-600)]" style="color:var(--c-blue-600)">View &rarr;</a></td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Photo Prints</td>
+            <td class="hidden sm:table-cell" style="color:var(--text-muted)">Events, portraits, keepsakes</td>
+            <td class="hidden md:table-cell" style="color:var(--text-muted)">24&ndash;48 hrs</td>
+            <td class="price-tag whitespace-nowrap">$0.42/print</td>
+            <td class="text-end sm:text-start"><a href="#photo-prints" class="font-medium hover:text-[var(--c-blue-600)]" style="color:var(--c-blue-600)">View &rarr;</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCUMENTS -->
+  <section id="documents" class="container-shop py-20 grid lg:grid-cols-2 gap-12 items-center scroll-mt-[150px]">
+    <img src="https://images.unsplash.com/photo-1468779036391-52341f60b55d?auto=format&fit=crop&w=800&q=80" alt="Bound document sets and file folders ready for pickup" class="rounded-2xl w-full h-80 object-cover" loading="lazy" data-reveal="left" />
+    <div data-reveal="right">
+      <span class="font-mono text-xs tracking-widest" style="color:var(--c-blue-600)">01 &middot; DOCUMENTS</span>
+      <h2 class="font-display text-3xl sm:text-4xl mt-2">Reports, manuals &amp; handouts</h2>
+      <p class="mt-3" style="color:var(--text-muted)">Single or double-sided, black &amp; white or full colour, with stapling, spiral or hardcover binding. Ideal for board packets, training manuals and event handouts.</p>
+      <div class="flex flex-wrap gap-2 mt-5">
+        <span class="spec-chip">A4 / Letter / Legal</span>
+        <span class="spec-chip">B&amp;W or Full Color</span>
+        <span class="spec-chip">Single / Double-sided</span>
+        <span class="spec-chip">Stapled / Spiral / Hardcover</span>
+      </div>
+      <div class="flex items-center justify-between mt-6 max-w-xs">
+        <span class="price-tag text-2xl">from $0.12<span class="text-sm font-normal" style="color:var(--text-muted)">/pg</span></span>
+        <a href="service-details.html" class="btn btn-primary btn-sm">View Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS CARDS -->
+  <section id="business-cards" class="py-20 scroll-mt-[150px]" style="background:var(--bg-dim)">
+    <div class="container-shop grid lg:grid-cols-2 gap-12 items-center">
+      <div class="lg:order-2" data-reveal="right">
+        <img src="https://images.unsplash.com/photo-1623305466040-b753da413c9b?auto=format&fit=crop&w=800&q=80" alt="Finished business cards stacked on a marble counter" class="rounded-2xl w-full h-80 object-cover" loading="lazy" />
+      </div>
+      <div class="lg:order-1" data-reveal="left">
+        <span class="font-mono text-xs tracking-widest" style="color:var(--c-magenta-500)">02 &middot; BUSINESS CARDS</span>
+        <h2 class="font-display text-3xl sm:text-4xl mt-2">Make a sharper first impression</h2>
+        <p class="mt-3" style="color:var(--text-muted)">Double-sided, full colour cards on matte, glossy or uncoated stock, cut to precise 3.5&times;2 in with clean edges.</p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="spec-chip">3.5 &times; 2 in</span>
+          <span class="spec-chip">Matte / Glossy / Uncoated</span>
+          <span class="spec-chip">Double-sided</span>
+          <span class="spec-chip">Boxes of 100</span>
+        </div>
+        <div class="flex items-center justify-between mt-6 max-w-xs">
+          <span class="price-tag text-2xl">from $24.99<span class="text-sm font-normal" style="color:var(--text-muted)">/box</span></span>
+          <a href="dashboard-new-order.html?service=business-cards" class="btn btn-secondary btn-sm">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNERS -->
+  <section id="banners" class="container-shop py-20 grid lg:grid-cols-2 gap-12 items-center scroll-mt-[150px]">
+    <img src="https://images.unsplash.com/photo-1657899316581-ab9584497522?auto=format&fit=crop&w=800&q=80" alt="Large-format grand opening vinyl banner" class="rounded-2xl w-full h-80 object-cover" loading="lazy" data-reveal="left" />
+    <div data-reveal="right">
+      <span class="font-mono text-xs tracking-widest" style="color:var(--c-blue-600)">03 &middot; BANNERS &amp; SIGNS</span>
+      <h2 class="font-display text-3xl sm:text-4xl mt-2">Get noticed from the street</h2>
+      <p class="mt-3" style="color:var(--text-muted)">Weatherproof vinyl banners, yard signs and posters with grommets or stakes included, ready to hang the same day.</p>
+      <div class="flex flex-wrap gap-2 mt-5">
+        <span class="spec-chip">Up to 3 &times; 10 ft</span>
+        <span class="spec-chip">Full Color</span>
+        <span class="spec-chip">Grommets / Stakes</span>
+        <span class="spec-chip">Indoor / Outdoor Vinyl</span>
+      </div>
+      <div class="flex items-center justify-between mt-6 max-w-xs">
+        <span class="price-tag text-2xl">from $44.00<span class="text-sm font-normal" style="color:var(--text-muted)">/ea</span></span>
+        <a href="dashboard-new-order.html?service=banners" class="btn btn-primary btn-sm">Order Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO PRINTS -->
+  <section id="photo-prints" class="py-20 scroll-mt-[150px]" style="background:var(--bg-dim)">
+    <div class="container-shop grid lg:grid-cols-2 gap-12 items-center">
+      <div class="lg:order-2" data-reveal="right">
+        <img src="https://images.unsplash.com/photo-1571502189597-d7d3a0f114fd?auto=format&fit=crop&w=800&q=80" alt="Open photo book with printed wedding photographs" class="rounded-2xl w-full h-80 object-cover" loading="lazy" />
+      </div>
+      <div class="lg:order-1" data-reveal="left">
+        <span class="font-mono text-xs tracking-widest" style="color:var(--c-magenta-500)">04 &middot; PHOTO PRINTS</span>
+        <h2 class="font-display text-3xl sm:text-4xl mt-2">Prints worth keeping</h2>
+        <p class="mt-3" style="color:var(--text-muted)">From wallet-size to poster-size, glossy or matte finish, printed on true photo stock with accurate skin tones.</p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="spec-chip">4&times;6 to 16&times;20 in</span>
+          <span class="spec-chip">Glossy / Matte</span>
+          <span class="spec-chip">Single-sided</span>
+          <span class="spec-chip">Batch upload supported</span>
+        </div>
+        <div class="flex items-center justify-between mt-6 max-w-xs">
+          <span class="price-tag text-2xl">from $0.42<span class="text-sm font-normal" style="color:var(--text-muted)">/print</span></span>
+          <a href="dashboard-new-order.html?service=photos" class="btn btn-secondary btn-sm">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TURNAROUND & DELIVERY -->
+  <section class="py-20">
+    <div class="container-shop">
+      <div class="max-w-2xl mb-12" data-reveal="up">
+        <span class="font-mono text-xs tracking-widest" style="color:var(--c-magenta-500)">TURNAROUND &amp; DELIVERY</span>
+        <h2 class="font-display text-3xl sm:text-4xl mt-2">Choose your speed, choose your pickup.</h2>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="info-panel" style="border-inline-start:3px solid var(--c-blue-600)" data-reveal="up">
+          <span class="w-11 h-11 rounded-xl flex items-center justify-center text-lg mb-4" style="background:var(--tint-blue);color:var(--c-blue-600)">&#128337;</span>
+          <h3 class="font-display text-lg">STANDARD</h3>
+          <p class="text-sm mt-2" style="color:var(--text-muted)">Ready in 24&ndash;48 hours. Our default turnaround for every service, no rush fee.</p>
+        </div>
+        <div class="info-panel" style="border-inline-start:3px solid var(--c-magenta-500)" data-reveal="up">
+          <span class="w-11 h-11 rounded-xl flex items-center justify-center text-lg mb-4" style="background:var(--tint-magenta);color:var(--c-magenta-600)">&#9889;</span>
+          <h3 class="font-display text-lg">RUSH</h3>
+          <p class="text-sm mt-2" style="color:var(--text-muted)">Same-day if submitted before 2pm. Adds 50% to the standard price, priority queued.</p>
+        </div>
+        <div class="info-panel" style="border-inline-start:3px solid var(--c-yellow-500)" data-reveal="up">
+          <span class="w-11 h-11 rounded-xl flex items-center justify-center text-lg mb-4" style="background:var(--tint-yellow)">&#128666;</span>
+          <h3 class="font-display text-lg">PICKUP OR DELIVERY</h3>
+          <p class="text-sm mt-2" style="color:var(--text-muted)">Free in-store pickup anytime, or free local delivery within 5 miles on orders $50+.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BULK & CUSTOM ORDERS -->
+  <section class="container-shop py-20 grid lg:grid-cols-2 gap-12 items-center">
+    <div data-reveal="left">
+      <span class="font-mono text-xs tracking-widest" style="color:var(--c-blue-600)">BULK &amp; CUSTOM ORDERS</span>
+      <h2 class="font-display text-3xl sm:text-4xl mt-2">Printing 500+ units or something unusual?</h2>
+      <p class="mt-3" style="color:var(--text-muted)">Large-run documents, multi-location banner sets, or a finish we don&rsquo;t list online &mdash; our press team will quote it directly instead of guessing at a per-unit price.</p>
+      <ul class="mt-5 space-y-2 text-sm" style="color:var(--text-muted)">
+        <li class="flex gap-2"><span style="color:var(--c-blue-600)">&#10003;</span> Volume discounts on orders over 500 units</li>
+        <li class="flex gap-2"><span style="color:var(--c-blue-600)">&#10003;</span> Multi-location delivery scheduling</li>
+        <li class="flex gap-2"><span style="color:var(--c-blue-600)">&#10003;</span> Custom stock, die-cuts &amp; specialty finishes</li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary mt-6">Request a Custom Quote</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1611844327158-1b6c66bc402c?auto=format&fit=crop&w=800&q=80" alt="Designer reviewing a bulk print order on a laptop" class="rounded-2xl w-full h-80 object-cover" loading="lazy" data-reveal="right" />
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 text-center" style="background:linear-gradient(120deg,var(--c-blue-600),var(--c-magenta-500))">
+    <div class="container-shop" data-reveal="up">
+      <h2 class="font-display text-3xl sm:text-5xl text-white max-w-2xl mx-auto">Not sure which service fits your job?</h2>
+      <p class="text-white/80 mt-3">Send us your file and we&rsquo;ll recommend the right specs &mdash; free of charge.</p>
+      <div class="flex flex-wrap justify-center gap-4 mt-8">
+        <a href="contact.html" class="btn !bg-white !text-[var(--c-blue-700)] hover:!bg-[var(--tint-yellow)]">Ask Us First</a>
+        <a href="pricing.html" class="btn btn-outline !text-white !border-white hover:!bg-white hover:!text-[var(--c-blue-700)]">See Pricing</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer"></footer>
+<div id="back-to-top-root"></div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

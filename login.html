@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login | Sharpline Print &amp; Copy Co.</title>
+<meta name="description" content="Log in to your Sharpline account to upload files, track print jobs, and reorder past prints." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%234338CA'/%3E%3Cpath d='M7 8V4h10v4M6 17H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-2' stroke='white' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='7' y='13' width='10' height='7' fill='white'/%3E%3C/svg%3E" />
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem('sharpline-theme');
+      if (!theme) theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('dir', localStorage.getItem('sharpline-dir') || 'ltr');
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css" />
+<style>
+  .field-input{width:100%;padding:.75rem 1rem;border-radius:8px;border:1px solid var(--border);background:var(--bg-elevated);color:var(--text)}
+  .field-input:focus{outline:none;border-color:var(--c-blue-600);box-shadow:0 0 0 3px rgba(67,56,202,.15)}
+  .field-label{font-size:.85rem;font-weight:600;margin-bottom:.4rem;display:block}
+  .field-error{color:var(--c-magenta-600);font-size:.78rem;margin-top:.35rem}
+</style>
+</head>
+<body data-area="public">
+<div id="toast-root"></div>
+<header id="site-header"></header>
+<div id="mobile-drawer-root"></div>
+
+<main id="main-content">
+  <section class="grid lg:grid-cols-2 min-h-[calc(100vh-4rem)]">
+    <div class="relative hidden lg:block">
+      <img src="https://images.unsplash.com/photo-1587307307189-0354b351e9e1?auto=format&fit=crop&w=1000&q=80" alt="Printer ready to produce a new job at Sharpline" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      <div class="absolute inset-0" style="background:linear-gradient(160deg, rgba(67,56,202,.85), rgba(20,22,28,.85))"></div>
+      <div class="relative h-full flex flex-col justify-end p-12 text-white">
+        <p class="font-display text-3xl leading-tight">&ldquo;Upload once, reorder anytime.&rdquo;</p>
+        <p class="text-white/70 mt-3 text-sm">Every job you place is saved to your account &mdash; track status and reorder with one click.</p>
+      </div>
+    </div>
+    <div class="flex items-center justify-center p-6 sm:p-12">
+      <div class="w-full max-w-sm" data-reveal="up">
+        <h1 class="font-display text-3xl">WELCOME BACK</h1>
+        <p class="text-sm mt-2" style="color:var(--text-muted)">Log in to track jobs and reorder past prints.</p>
+        <form id="login-form" class="mt-8 space-y-5" novalidate>
+          <div>
+            <label class="field-label" for="login-email">Email address</label>
+            <input class="field-input" type="email" id="login-email" name="email" data-validate="required|email" />
+            <p class="field-error hidden" data-error-for="email">Please enter a valid email.</p>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label class="field-label !mb-0" for="login-password">Password</label>
+              <button type="button" class="text-xs font-mono" style="color:var(--c-blue-600)" data-toggle-password="login-password">Show</button>
+            </div>
+            <input class="field-input" type="password" id="login-password" name="password" data-validate="required|min:6" />
+            <p class="field-error hidden" data-error-for="password">Password must be at least 6 characters.</p>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <label class="flex items-center gap-2"><input type="checkbox" class="rounded" /> Remember me</label>
+            <a href="#" class="hover:text-[var(--c-blue-600)]" style="color:var(--text-muted)">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary w-full">Log In</button>
+        </form>
+        <p class="text-sm mt-6 text-center" style="color:var(--text-muted)">Don&rsquo;t have an account? <a href="register.html" class="font-semibold hover:text-[var(--c-blue-600)]" style="color:var(--text)">Create one free</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+<div id="back-to-top-root"></div>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/dashboard.js" defer></script>
+</body>
+</html>

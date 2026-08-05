@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gallery | Sharpline Print &amp; Copy Co.</title>
+<meta name="description" content="Browse real print samples from Sharpline — documents, business cards, banners & signs, and photo prints. Click any image to view it full size." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%234338CA'/%3E%3Cpath d='M7 8V4h10v4M6 17H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-2' stroke='white' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='7' y='13' width='10' height='7' fill='white'/%3E%3C/svg%3E" />
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem('sharpline-theme');
+      if (!theme) theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('dir', localStorage.getItem('sharpline-dir') || 'ltr');
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<style>.gallery-tile{aspect-ratio:4/3;border-radius:14px}</style>
+</head>
+<body data-area="public">
+<div id="toast-root"></div>
+<header id="site-header"></header>
+<div id="mobile-drawer-root"></div>
+
+<main id="main-content">
+
+  <section class="relative py-16 sm:py-20 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <img src="https://images.unsplash.com/photo-1677658288115-28905b06b520?auto=format&fit=crop&w=1600&q=80" alt="Table of printed photographs from Sharpline" class="w-full h-full object-cover" loading="eager" />
+      <div class="absolute inset-0" style="background:rgba(20,22,28,.8)"></div>
+    </div>
+    <div class="container-shop">
+      <nav aria-label="Breadcrumb" class="text-xs text-white/60 mb-4" data-reveal="up"><a href="index.html" class="hover:text-white">Home</a> <span class="mx-1">/</span> <span class="text-white">Gallery</span></nav>
+      <h1 class="font-display text-4xl sm:text-6xl text-white" data-reveal="up">FRESH OFF THE PRESS</h1>
+      <p class="text-white/70 mt-4 max-w-xl" data-reveal="up">A look at real jobs that left our shop this year. Click any image to view it full size.</p>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="py-12" style="background:var(--ink-900);color:#fff">
+    <div class="container-shop grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+      <div data-reveal="up"><p class="stat-num text-2xl sm:text-3xl font-bold"><span data-countup="32">0</span></p><p class="text-white/60 text-xs sm:text-sm mt-1">Samples shown</p></div>
+      <div data-reveal="up"><p class="stat-num text-2xl sm:text-3xl font-bold"><span data-countup="4">0</span></p><p class="text-white/60 text-xs sm:text-sm mt-1">Categories</p></div>
+      <div data-reveal="up"><p class="stat-num text-2xl sm:text-3xl font-bold"><span data-countup="18400" data-countup-suffix="+">0</span></p><p class="text-white/60 text-xs sm:text-sm mt-1">Total jobs printed</p></div>
+      <div data-reveal="up"><p class="stat-num text-2xl sm:text-3xl font-bold"><span data-countup="4.9" data-countup-decimals="1">0</span>/5</p><p class="text-white/60 text-xs sm:text-sm mt-1">Customer rating</p></div>
+    </div>
+  </section>
+
+  <section class="container-shop py-16">
+    <div class="flex gap-2 flex-wrap mb-10" role="group" aria-label="Filter gallery by category" data-reveal="up">
+      <button type="button" class="filter-btn is-active-tab px-4 py-2 rounded-full border text-sm font-medium" style="border-color:var(--border)" data-filter-btn="all" aria-pressed="true">All Work <span class="opacity-70 font-mono text-xs">(32)</span></button>
+      <button type="button" class="filter-btn px-4 py-2 rounded-full border text-sm font-medium" style="border-color:var(--border)" data-filter-btn="documents" aria-pressed="false">Documents <span class="opacity-70 font-mono text-xs">(12)</span></button>
+      <button type="button" class="filter-btn px-4 py-2 rounded-full border text-sm font-medium" style="border-color:var(--border)" data-filter-btn="business-cards" aria-pressed="false">Business Cards <span class="opacity-70 font-mono text-xs">(8)</span></button>
+      <button type="button" class="filter-btn px-4 py-2 rounded-full border text-sm font-medium" style="border-color:var(--border)" data-filter-btn="banners" aria-pressed="false">Banners &amp; Signs <span class="opacity-70 font-mono text-xs">(8)</span></button>
+      <button type="button" class="filter-btn px-4 py-2 rounded-full border text-sm font-medium" style="border-color:var(--border)" data-filter-btn="photo-prints" aria-pressed="false">Photo Prints <span class="opacity-70 font-mono text-xs">(4)</span></button>
+    </div>
+
+    <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-4" data-reveal="up">
+
+      <!-- DOCUMENTS (12) -->
+      <figure class="bento-tile gallery-tile" data-filter-item="documents"><a href="https://images.unsplash.com/photo-1583521214690-73421a1829a9?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Bound document sets ready for pickup"><img src="https://images.unsplash.com/photo-1583521214690-73421a1829a9?auto=format&fit=crop&w=500&q=80" alt="Bound document sets and file folders ready for pickup" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="documents"><a href="https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Fresh printing papers stacked"><img src="https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?auto=format&fit=crop&w=500&q=80" alt="Pile of fresh printing papers" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="documents"><a href="https://images.unsplash.com/photo-1771173479042-810085465e49?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Job specification sheets"><img src="https://images.unsplash.com/photo-1771173479042-810085465e49?auto=format&fit=crop&w=500&q=80" alt="Stack of papers marked with colorful sticky tabs" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="documents"><a href="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Restaurant menu reprints"><img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=500&q=80" alt="Printed restaurant menus on clipboards" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="documents"><a href="https://images.unsplash.com/photo-1612367980327-7454a7276aa7?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Spiral-bound booklet"><img src="https://images.unsplash.com/photo-1612367980327-7454a7276aa7?auto=format&fit=crop&w=500&q=80" alt="Spiral-bound printed booklet on a wooden table" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="documents"><a href="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Spiral notebook near a keyboard"><img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=500&q=80" alt="Empty spiral notebook near a keyboard and pen" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="documents"><a href="https://images.unsplash.com/photo-1598620617137-2ab990aadd37?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Open notebook on a wooden table"><img src="https://images.unsplash.com/photo-1598620617137-2ab990aadd37?auto=format&fit=crop&w=500&q=80" alt="Open notebook on a wooden table" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="documents"><a href="https://images.unsplash.com/photo-1573848953384-3be02021eb0b?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Blank stationery pad"><img src="https://images.unsplash.com/photo-1573848953384-3be02021eb0b?auto=format&fit=crop&w=500&q=80" alt="Empty stationery pad ready for printing" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="documents"><a href="https://images.unsplash.com/photo-1611079830811-865ff4428d17?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Notebook with pen on top"><img src="https://images.unsplash.com/photo-1611079830811-865ff4428d17?auto=format&fit=crop&w=500&q=80" alt="White notebook with a pen on top" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="documents"><a href="https://images.unsplash.com/photo-1654124803453-5bb8819e1524?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Notebook and pen on a wooden table"><img src="https://images.unsplash.com/photo-1654124803453-5bb8819e1524?auto=format&fit=crop&w=500&q=80" alt="Notebook and pen on a wooden table" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="documents"><a href="https://images.unsplash.com/photo-1598620616337-cb8f766489bd?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Spiral notebook on a black wooden table"><img src="https://images.unsplash.com/photo-1598620616337-cb8f766489bd?auto=format&fit=crop&w=500&q=80" alt="White spiral notebook on a black wooden table" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="documents"><a href="https://images.unsplash.com/photo-1599008633840-052c7f756385?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Printer paper on a wooden table"><img src="https://images.unsplash.com/photo-1599008633840-052c7f756385?auto=format&fit=crop&w=500&q=80" alt="White printer paper on a brown wooden table" loading="lazy" /></a></figure>
+
+      <!-- BUSINESS CARDS (8) -->
+      <figure class="bento-tile gallery-tile" data-filter-item="business-cards"><a href="https://images.unsplash.com/photo-1718670013921-2f144aba173a?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Business cards on a marble counter"><img src="https://images.unsplash.com/photo-1718670013921-2f144aba173a?auto=format&fit=crop&w=500&q=80" alt="Finished business cards on a marble counter" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="business-cards"><a href="https://images.unsplash.com/photo-1718670013988-c6e3edb92345?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Matte black business card"><img src="https://images.unsplash.com/photo-1718670013988-c6e3edb92345?auto=format&fit=crop&w=500&q=80" alt="A matte black business card on a wooden table" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="business-cards"><a href="https://images.unsplash.com/photo-1624567881801-a5a85867d990?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Card stock samples"><img src="https://images.unsplash.com/photo-1624567881801-a5a85867d990?auto=format&fit=crop&w=500&q=80" alt="White card stock samples on a wooden surface" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="business-cards"><a href="https://images.unsplash.com/photo-1628891439478-c613e85af7d6?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Holding a finished card"><img src="https://images.unsplash.com/photo-1628891439478-c613e85af7d6?auto=format&fit=crop&w=500&q=80" alt="Person holding a black rectangular business card" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="business-cards"><a href="https://images.unsplash.com/photo-1599590984817-0c15f31b1fa5?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Black and white card"><img src="https://images.unsplash.com/photo-1599590984817-0c15f31b1fa5?auto=format&fit=crop&w=500&q=80" alt="Person holding a black and white business card" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="business-cards"><a href="https://images.unsplash.com/photo-1623305465231-d884ce752d59?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Blank card stock sheets"><img src="https://images.unsplash.com/photo-1623305465231-d884ce752d59?auto=format&fit=crop&w=500&q=80" alt="Two blank paper sheets ready for card printing" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="business-cards"><a href="https://images.unsplash.com/photo-1623305463957-df17547327cb?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Stacked blank business cards"><img src="https://images.unsplash.com/photo-1623305463957-df17547327cb?auto=format&fit=crop&w=500&q=80" alt="Two blank business cards stacked together" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="business-cards"><a href="https://images.unsplash.com/photo-1599108859519-8ac78fd1b912?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Checked card on wooden table"><img src="https://images.unsplash.com/photo-1599108859519-8ac78fd1b912?auto=format&fit=crop&w=500&q=80" alt="White and black checked card on a wooden table" loading="lazy" /></a></figure>
+
+      <!-- BANNERS & SIGNS (8) -->
+      <figure class="bento-tile gallery-tile" data-filter-item="banners"><a href="https://images.unsplash.com/photo-1593238404535-cda7ae2fe50b?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Grand opening vinyl banner"><img src="https://images.unsplash.com/photo-1593238404535-cda7ae2fe50b?auto=format&fit=crop&w=500&q=80" alt="Large-format grand opening vinyl banner" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="banners"><a href="https://images.unsplash.com/photo-1678717522951-3c5e00016cd4?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Custom retail sign"><img src="https://images.unsplash.com/photo-1678717522951-3c5e00016cd4?auto=format&fit=crop&w=500&q=80" alt="Custom retail sign on a wooden table" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="banners"><a href="https://images.unsplash.com/photo-1638368888211-cecd27facf71?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Street-side poster display"><img src="https://images.unsplash.com/photo-1638368888211-cecd27facf71?auto=format&fit=crop&w=500&q=80" alt="Man walking past a large printed poster" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="banners"><a href="https://images.unsplash.com/photo-1743887909609-2dc6e63c78d0?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Storefront signage installation"><img src="https://images.unsplash.com/photo-1743887909609-2dc6e63c78d0?auto=format&fit=crop&w=500&q=80" alt="Storefront signage installed on a building" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="banners"><a href="https://images.unsplash.com/photo-1589041526757-fe5e03434e86?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Event poster print"><img src="https://images.unsplash.com/photo-1589041526757-fe5e03434e86?auto=format&fit=crop&w=500&q=80" alt="Happy birthday event poster print" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="banners"><a href="https://images.unsplash.com/photo-1567865920080-7eccb8a84d10?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Large format wall poster"><img src="https://images.unsplash.com/photo-1567865920080-7eccb8a84d10?auto=format&fit=crop&w=500&q=80" alt="Large format teal and black wall poster" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="banners"><a href="https://images.unsplash.com/photo-1677477242420-ac1d8ca030c2?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Installing a large poster"><img src="https://images.unsplash.com/photo-1677477242420-ac1d8ca030c2?auto=format&fit=crop&w=500&q=80" alt="Worker on a scaffold installing a large poster" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="banners"><a href="https://images.unsplash.com/photo-1624951518564-aca827daaee7?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Printed wall graphic"><img src="https://images.unsplash.com/photo-1624951518564-aca827daaee7?auto=format&fit=crop&w=500&q=80" alt="White, blue and yellow printed wall graphic" loading="lazy" /></a></figure>
+
+      <!-- PHOTO PRINTS (4) -->
+      <figure class="bento-tile gallery-tile" data-filter-item="photo-prints"><a href="https://images.unsplash.com/photo-1595981234058-a9302fb97229?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Photo prints laid out on a table"><img src="https://images.unsplash.com/photo-1595981234058-a9302fb97229?auto=format&fit=crop&w=500&q=80" alt="Photo prints laid out on a white wooden table" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="photo-prints"><a href="https://images.unsplash.com/photo-1676883344224-2fa5de6025db?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Wedding photo book"><img src="https://images.unsplash.com/photo-1676883344224-2fa5de6025db?auto=format&fit=crop&w=500&q=80" alt="Open photo book showing printed wedding photographs" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="photo-prints"><a href="https://images.unsplash.com/photo-1645497265272-5c92210a18b8?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Family photo book"><img src="https://images.unsplash.com/photo-1645497265272-5c92210a18b8?auto=format&fit=crop&w=500&q=80" alt="Open photo book with a printed family portrait" loading="lazy" /></a></figure>
+      <figure class="bento-tile gallery-tile" data-filter-item="photo-prints"><a href="https://images.unsplash.com/photo-1677658288115-28905b06b520?auto=format&fit=crop&w=1400&q=80" class="glightbox" data-type="image" data-gallery="shop-gallery" data-title="Table of prints and flowers"><img src="https://images.unsplash.com/photo-1677658288115-28905b06b520?auto=format&fit=crop&w=500&q=80" alt="Table of printed photographs and flowers" loading="lazy" /></a></figure>
+
+    </div>
+
+    <div id="gallery-pagination" class="flex items-center justify-center gap-3 mt-10" aria-label="Gallery pagination"></div>
+  </section>
+
+  <!-- POPULAR FINISHES -->
+  <section class="py-14">
+    <div class="container-shop">
+      <p class="text-center font-mono text-xs tracking-widest mb-6" style="color:var(--text-muted)" data-reveal="up">FINISHES YOU&rsquo;LL SEE IN THIS GALLERY</p>
+      <div class="flex flex-wrap justify-center gap-3" data-reveal="up">
+        <span class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm border" style="border-color:var(--border);background:var(--bg-elevated)">&#10024; Matte Finish</span>
+        <span class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm border" style="border-color:var(--border);background:var(--bg-elevated)">&#128142; Glossy Finish</span>
+        <span class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm border" style="border-color:var(--border);background:var(--bg-elevated)">&#128220; Spiral-Bound</span>
+        <span class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm border" style="border-color:var(--border);background:var(--bg-elevated)">&#128214; Hardcover</span>
+        <span class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm border" style="border-color:var(--border);background:var(--bg-elevated)">&#128204; Grommets &amp; Stakes</span>
+        <span class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm border" style="border-color:var(--border);background:var(--bg-elevated)">&#9889; Rush Turnaround</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FROM FILE TO FINISHED PRINT -->
+  <section class="container-shop py-20">
+    <div class="max-w-2xl mb-12" data-reveal="up">
+      <span class="font-mono text-xs tracking-widest" style="color:var(--c-blue-600)">HOW WE GOT HERE</span>
+      <h2 class="font-display text-3xl sm:text-4xl mt-2">From file to finished print.</h2>
+      <p class="mt-3" style="color:var(--text-muted)">Every sample above went through the same three steps &mdash; no shortcuts, no guesswork.</p>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1620325867502-221cfb5faa5f?auto=format&fit=crop&w=700&q=80" alt="Reviewing a submitted file and proof before printing" class="rounded-2xl w-full h-48 object-cover" loading="lazy" />
+        <p class="font-mono text-xs mt-4" style="color:var(--c-blue-600)">STEP 01</p>
+        <h3 class="font-display text-lg mt-1">UPLOAD &amp; PROOF</h3>
+        <p class="text-sm mt-2" style="color:var(--text-muted)">We check resolution, bleed and colour profile against your file before anything touches the press.</p>
+      </div>
+      <div data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1758183961426-88d64eb5f787?auto=format&fit=crop&w=700&q=80" alt="Industrial printing press running a colour-matched job" class="rounded-2xl w-full h-48 object-cover" loading="lazy" />
+        <p class="font-mono text-xs mt-4" style="color:var(--c-magenta-500)">STEP 02</p>
+        <h3 class="font-display text-lg mt-1">COLOUR-MATCHED RUN</h3>
+        <p class="text-sm mt-2" style="color:var(--text-muted)">Your job runs against a Pantone reference so the sample you see here is the colour you&rsquo;ll actually get.</p>
+      </div>
+      <div data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1650094980833-7373de26feb6?auto=format&fit=crop&w=700&q=80" alt="Finished print job ready for customer pickup" class="rounded-2xl w-full h-48 object-cover" loading="lazy" />
+        <p class="font-mono text-xs mt-4" style="color:var(--c-yellow-500)">STEP 03</p>
+        <h3 class="font-display text-lg mt-1">READY FOR PICKUP</h3>
+        <p class="text-sm mt-2" style="color:var(--text-muted)">Finished, trimmed and staged at the counter &mdash; tracked live in your dashboard the whole way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT SPOTLIGHT -->
+  <section class="py-20" style="background:var(--bg-dim)">
+    <div class="container-shop grid lg:grid-cols-2 gap-12 items-center">
+      <img src="https://images.unsplash.com/photo-1675848758329-4f90e57941e3?auto=format&fit=crop&w=900&q=80" alt="Whitfield Realty storefront after its grand-opening banner installation" class="rounded-2xl w-full h-80 lg:h-full object-cover" loading="lazy" data-reveal="left" />
+      <div data-reveal="right">
+        <span class="font-mono text-xs tracking-widest" style="color:var(--c-magenta-500)">CLIENT SPOTLIGHT</span>
+        <h2 class="font-display text-3xl sm:text-4xl mt-2">Whitfield Realty&rsquo;s grand-opening, printed in 36 hours.</h2>
+        <p class="mt-4" style="color:var(--text-muted)">Dana&rsquo;s team needed a Pantone-matched storefront banner, 500 business cards and a stack of listing flyers before a Saturday open house &mdash; with two days&rsquo; notice. We colour-matched the banner to their logo, rush-printed the cards, and delivered everything to the site the morning of the event.</p>
+        <div class="grid grid-cols-3 gap-4 mt-6 max-w-sm">
+          <div><p class="stat-num text-2xl font-bold">36<span class="text-sm font-normal" style="color:var(--text-muted)">hrs</span></p><p class="text-xs mt-1" style="color:var(--text-muted)">Turnaround</p></div>
+          <div><p class="stat-num text-2xl font-bold">3</p><p class="text-xs mt-1" style="color:var(--text-muted)">Products printed</p></div>
+          <div><p class="stat-num text-2xl font-bold">100%</p><p class="text-xs mt-1" style="color:var(--text-muted)">Colour match</p></div>
+        </div>
+        <a href="contact.html" class="btn btn-primary mt-6">Start Your Own Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAPER & STOCK WE USE -->
+  <section class="container-shop py-20">
+    <div class="max-w-2xl mb-12" data-reveal="up">
+      <span class="font-mono text-xs tracking-widest" style="color:var(--c-blue-600)">MATERIALS</span>
+      <h2 class="font-display text-3xl sm:text-4xl mt-2">Paper &amp; stock we print on.</h2>
+      <p class="mt-3" style="color:var(--text-muted)">Every finish in this gallery starts with the right stock. Here&rsquo;s what we keep in-house.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <figure data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1601662528567-526cd06f6582?auto=format&fit=crop&w=500&q=80" alt="Matte white cardstock texture" class="rounded-2xl w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="mt-3">
+          <p class="font-display text-base">MATTE WHITE</p>
+          <p class="text-sm mt-1" style="color:var(--text-muted)">Our default for documents and business cards &mdash; smooth, non-reflective, easy to write on.</p>
+        </figcaption>
+      </figure>
+      <figure data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1618635245221-a1974f59cb02?auto=format&fit=crop&w=500&q=80" alt="Glossy premium cardstock texture" class="rounded-2xl w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="mt-3">
+          <p class="font-display text-base">GLOSSY PREMIUM</p>
+          <p class="text-sm mt-1" style="color:var(--text-muted)">Vivid colour and sheen for photo prints and standout business cards.</p>
+        </figcaption>
+      </figure>
+      <figure data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1659166925474-1706ba9546e4?auto=format&fit=crop&w=500&q=80" alt="Kraft brown recycled paper texture" class="rounded-2xl w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="mt-3">
+          <p class="font-display text-base">KRAFT &amp; RECYCLED</p>
+          <p class="text-sm mt-1" style="color:var(--text-muted)">FSC-certified stock for a natural, eco-conscious look on flyers and packaging inserts.</p>
+        </figcaption>
+      </figure>
+      <figure data-reveal="up">
+        <img src="https://images.unsplash.com/photo-1616410731303-6affae095a0a?auto=format&fit=crop&w=500&q=80" alt="Uncoated natural cardstock texture" class="rounded-2xl w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="mt-3">
+          <p class="font-display text-base">UNCOATED NATURAL</p>
+          <p class="text-sm mt-1" style="color:var(--text-muted)">A soft, tactile finish popular for wedding and event stationery.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- MORE RECENT WINS -->
+  <section class="py-20" style="background:var(--bg-dim)">
+    <div class="container-shop">
+      <div class="max-w-2xl mb-12" data-reveal="up">
+        <span class="font-mono text-xs tracking-widest" style="color:var(--c-magenta-500)">MORE RECENT WINS</span>
+        <h2 class="font-display text-3xl sm:text-4xl mt-2">A few more jobs like these.</h2>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-8">
+        <div data-reveal="up">
+          <p class="font-display text-3xl" style="color:var(--c-blue-600)">500</p>
+          <p class="text-sm mt-2" style="color:var(--text-muted)">business cards reprinted for Ibe Law Group in under 24 hours, exact specs saved on file.</p>
+        </div>
+        <div data-reveal="up">
+          <p class="font-display text-3xl" style="color:var(--c-magenta-500)">3</p>
+          <p class="text-sm mt-2" style="color:var(--text-muted)">locations of the same banner set printed and shipped for a regional gym chain&rsquo;s rebrand.</p>
+        </div>
+        <div data-reveal="up">
+          <p class="font-display text-3xl" style="color:var(--c-yellow-500)">200</p>
+          <p class="text-sm mt-2" style="color:var(--text-muted)">page donor report, spiral-bound and delivered same-day for the Springfield Youth Fund.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 text-center" data-reveal="up">
+    <div class="container-shop">
+      <h2 class="font-display text-2xl sm:text-3xl">Like what you see? Let&rsquo;s print yours.</h2>
+      <a href="dashboard-new-order.html" class="btn btn-primary mt-6">Start a Print Job</a>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer"></footer>
+<div id="back-to-top-root"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script>
+  window.addEventListener("load", function () {
+    if (typeof GLightbox !== "undefined") GLightbox({ selector: ".glightbox" });
+
+    var PAGE_SIZE = 8;
+    var grid = document.getElementById("gallery-grid");
+    var items = Array.prototype.slice.call(grid.querySelectorAll("[data-filter-item]"));
+    var filterBtns = document.querySelectorAll("[data-filter-btn]");
+    var paginationHost = document.getElementById("gallery-pagination");
+    var currentFilter = "all";
+    var currentPage = 1;
+    var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function getFiltered() {
+      return currentFilter === "all" ? items : items.filter(function (el) { return el.getAttribute("data-filter-item") === currentFilter; });
+    }
+
+    function render() {
+      var filtered = getFiltered();
+      var totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+      if (currentPage > totalPages) currentPage = totalPages;
+      items.forEach(function (el) { el.classList.add("hidden"); });
+      var start = (currentPage - 1) * PAGE_SIZE;
+      filtered.slice(start, start + PAGE_SIZE).forEach(function (el) { el.classList.remove("hidden"); });
+      renderPagination(totalPages);
+    }
+
+    function renderPagination(totalPages) {
+      if (totalPages <= 1) { paginationHost.innerHTML = ""; return; }
+      var html = '<button type="button" data-page-nav="prev" class="btn btn-outline btn-sm" aria-label="Previous page"' + (currentPage === 1 ? " disabled" : "") + '>&larr;</button>';
+      html += '<div class="flex items-center gap-2">';
+      for (var i = 1; i <= totalPages; i++) {
+        html += '<button type="button" data-page-num="' + i + '" class="w-9 h-9 rounded-full text-sm font-medium border' + (i === currentPage ? " is-active-tab" : "") + '" style="border-color:var(--border)" aria-current="' + (i === currentPage ? "true" : "false") + '">' + i + '</button>';
+      }
+      html += '</div>';
+      html += '<button type="button" data-page-nav="next" class="btn btn-outline btn-sm" aria-label="Next page"' + (currentPage === totalPages ? " disabled" : "") + '>&rarr;</button>';
+      paginationHost.innerHTML = html;
+
+      var prevBtn = paginationHost.querySelector('[data-page-nav="prev"]');
+      var nextBtn = paginationHost.querySelector('[data-page-nav="next"]');
+      if (prevBtn) prevBtn.addEventListener("click", function () { if (currentPage > 1) { currentPage--; render(); scrollToGrid(); } });
+      if (nextBtn) nextBtn.addEventListener("click", function () { if (currentPage < totalPages) { currentPage++; render(); scrollToGrid(); } });
+      paginationHost.querySelectorAll("[data-page-num]").forEach(function (btn) {
+        btn.addEventListener("click", function () { currentPage = parseInt(btn.getAttribute("data-page-num"), 10); render(); scrollToGrid(); });
+      });
+    }
+
+    function scrollToGrid() {
+      grid.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+    }
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        filterBtns.forEach(function (b) { b.classList.toggle("is-active-tab", b === btn); b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+        currentFilter = btn.getAttribute("data-filter-btn");
+        currentPage = 1;
+        render();
+      });
+    });
+
+    render();
+  });
+</script>
+</body>
+</html>

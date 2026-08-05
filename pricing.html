@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pricing | Sharpline Print &amp; Copy Co.</title>
+<meta name="description" content="Transparent per-unit pricing for documents, business cards, banners & signs, and photo prints at Sharpline Print & Copy Co., plus finishing add-ons and volume discounts." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%234338CA'/%3E%3Cpath d='M7 8V4h10v4M6 17H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-2' stroke='white' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='7' y='13' width='10' height='7' fill='white'/%3E%3C/svg%3E" />
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem('sharpline-theme');
+      if (!theme) theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('dir', localStorage.getItem('sharpline-dir') || 'ltr');
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-area="public">
+<div id="toast-root"></div>
+<header id="site-header"></header>
+<div id="mobile-drawer-root"></div>
+
+<main id="main-content">
+
+  <!-- COMPACT BANNER HERO -->
+  <section class="relative py-16 sm:py-20 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <img src="https://images.unsplash.com/photo-1642480532034-362360552ccb?auto=format&fit=crop&w=1600&q=80" alt="Pantone colour swatch book used to price colour-accurate jobs" class="w-full h-full object-cover" loading="eager" />
+      <div class="absolute inset-0" style="background:rgba(20,22,28,.82)"></div>
+    </div>
+    <div class="container-shop">
+      <nav aria-label="Breadcrumb" class="text-xs text-white/60 mb-4" data-reveal="up"><a href="index.html" class="hover:text-white">Home</a> <span class="mx-1">/</span> <span class="text-white">Pricing</span></nav>
+      <h1 class="font-display text-4xl sm:text-6xl text-white" data-reveal="up">WHAT IT COSTS, NO GUESSWORK</h1>
+      <p class="text-white/70 mt-4 max-w-xl" data-reveal="up">Pick a service below for its full price list, or build your exact order in the dashboard and watch the total update live.</p>
+    </div>
+  </section>
+
+  <!-- PRICING BY SERVICE : tabbed -->
+  <section class="container-shop py-16">
+    <div class="text-center max-w-xl mx-auto mb-10" data-reveal="up">
+      <span class="font-mono text-xs tracking-widest" style="color:var(--c-blue-600)">PRICING BY SERVICE</span>
+      <h2 class="font-display text-3xl sm:text-4xl mt-2">Pick a service to see full pricing.</h2>
+    </div>
+
+    <div data-tabs>
+      <div class="flex flex-wrap justify-center gap-2 mb-10" role="tablist" aria-label="Pricing by service">
+        <button type="button" data-tab-trigger="documents" role="tab" aria-selected="true" class="is-active-tab px-4 py-2 rounded-full border text-sm font-medium" style="border-color:var(--border)">&#128196; Documents</button>
+        <button type="button" data-tab-trigger="business-cards" role="tab" aria-selected="false" class="px-4 py-2 rounded-full border text-sm font-medium" style="border-color:var(--border)">&#128179; Business Cards</button>
+        <button type="button" data-tab-trigger="banners" role="tab" aria-selected="false" class="px-4 py-2 rounded-full border text-sm font-medium" style="border-color:var(--border)">&#127937; Banners &amp; Signs</button>
+        <button type="button" data-tab-trigger="photo-prints" role="tab" aria-selected="false" class="px-4 py-2 rounded-full border text-sm font-medium" style="border-color:var(--border)">&#128247; Photo Prints</button>
+      </div>
+
+      <div data-tab-panel="documents" class="price-plate max-w-2xl mx-auto">
+        <div class="flex items-center justify-between mb-1">
+          <h3 class="font-display text-xl">DOCUMENTS</h3>
+          <span class="plate-icon !mb-0" style="background:var(--tint-blue);color:var(--c-blue-600)">&#128196;</span>
+        </div>
+        <p class="text-sm mb-5" style="color:var(--text-muted)">Priced per page. Binding &amp; finishing priced separately below.</p>
+        <div class="overflow-x-auto">
+          <table class="price-table w-full text-sm">
+            <thead><tr class="text-left"><th>Option</th><th>Standard</th><th>Rush (same day)</th></tr></thead>
+            <tbody>
+              <tr><td>Black &amp; White, per page</td><td class="price-tag">$0.12</td><td class="price-tag">$0.18</td></tr>
+              <tr><td>Full Color, per page</td><td class="price-tag">$0.35</td><td class="price-tag">$0.53</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <a href="dashboard-new-order.html?service=documents" class="btn btn-outline btn-sm mt-5">Order Documents</a>
+      </div>
+
+      <div data-tab-panel="business-cards" class="price-plate max-w-2xl mx-auto hidden">
+        <div class="flex items-center justify-between mb-1">
+          <h3 class="font-display text-xl">BUSINESS CARDS</h3>
+          <span class="plate-icon !mb-0" style="background:var(--tint-magenta);color:var(--c-magenta-600)">&#128179;</span>
+        </div>
+        <p class="text-sm mb-5" style="color:var(--text-muted)">Priced per box of 100, double-sided full colour included.</p>
+        <div class="overflow-x-auto">
+          <table class="price-table w-full text-sm">
+            <thead><tr class="text-left"><th>Finish</th><th>Standard</th><th>Rush (same day)</th></tr></thead>
+            <tbody>
+              <tr><td>Matte, box of 100</td><td class="price-tag">$24.99</td><td class="price-tag">$37.49</td></tr>
+              <tr><td>Glossy, box of 100</td><td class="price-tag">$24.99</td><td class="price-tag">$37.49</td></tr>
+              <tr><td>Uncoated, box of 100</td><td class="price-tag">$27.99</td><td class="price-tag">$41.99</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <a href="dashboard-new-order.html?service=business-cards" class="btn btn-outline btn-sm mt-5">Order Business Cards</a>
+      </div>
+
+      <div data-tab-panel="banners" class="price-plate max-w-2xl mx-auto hidden">
+        <div class="flex items-center justify-between mb-1">
+          <h3 class="font-display text-xl">BANNERS &amp; SIGNS</h3>
+          <span class="plate-icon !mb-0" style="background:var(--tint-yellow)">&#127937;</span>
+        </div>
+        <p class="text-sm mb-5" style="color:var(--text-muted)">Full colour, grommets or stakes included.</p>
+        <div class="overflow-x-auto">
+          <table class="price-table w-full text-sm">
+            <thead><tr class="text-left"><th>Size</th><th>Standard</th><th>Rush (same day)</th></tr></thead>
+            <tbody>
+              <tr><td>3 &times; 6 ft vinyl banner</td><td class="price-tag">$44.00</td><td class="price-tag">$66.00</td></tr>
+              <tr><td>3 &times; 10 ft vinyl banner</td><td class="price-tag">$68.00</td><td class="price-tag">$102.00</td></tr>
+              <tr><td>Yard sign (18 &times; 24 in)</td><td class="price-tag">$19.00</td><td class="price-tag">$28.50</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <a href="dashboard-new-order.html?service=banners" class="btn btn-outline btn-sm mt-5">Order Banners &amp; Signs</a>
+      </div>
+
+      <div data-tab-panel="photo-prints" class="price-plate max-w-2xl mx-auto hidden">
+        <div class="flex items-center justify-between mb-1">
+          <h3 class="font-display text-xl">PHOTO PRINTS</h3>
+          <span class="plate-icon !mb-0" style="background:var(--tint-blue);color:var(--c-blue-600)">&#128247;</span>
+        </div>
+        <p class="text-sm mb-5" style="color:var(--text-muted)">Priced per print, glossy or matte finish.</p>
+        <div class="overflow-x-auto">
+          <table class="price-table w-full text-sm">
+            <thead><tr class="text-left"><th>Size</th><th>Standard</th><th>Rush (same day)</th></tr></thead>
+            <tbody>
+              <tr><td>4 &times; 6 in</td><td class="price-tag">$0.42</td><td class="price-tag">$0.63</td></tr>
+              <tr><td>5 &times; 7 in</td><td class="price-tag">$1.25</td><td class="price-tag">$1.88</td></tr>
+              <tr><td>8 &times; 10 in</td><td class="price-tag">$3.75</td><td class="price-tag">$5.63</td></tr>
+              <tr><td>16 &times; 20 in poster print</td><td class="price-tag">$14.00</td><td class="price-tag">$21.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <a href="dashboard-new-order.html?service=photos" class="btn btn-outline btn-sm mt-5">Order Photo Prints</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADD-ONS & FINISHING -->
+  <section class="py-20" style="background:var(--bg-dim)">
+    <div class="container-shop">
+      <div class="max-w-2xl mb-10" data-reveal="up">
+        <span class="font-mono text-xs tracking-widest" style="color:var(--c-magenta-500)">ADD-ONS &amp; FINISHING</span>
+        <h2 class="font-display text-3xl sm:text-4xl mt-2">Extras that apply across every service.</h2>
+      </div>
+      <div class="price-plate max-w-3xl mx-auto" data-reveal="up">
+        <div class="overflow-x-auto">
+          <table class="price-table w-full text-sm">
+            <thead><tr class="text-left"><th>Add-on</th><th class="hidden sm:table-cell">Applies to</th><th class="text-end sm:text-start">Price</th></tr></thead>
+            <tbody>
+              <tr><td>Stapling<span class="block sm:hidden text-xs" style="color:var(--text-muted)">Documents</span></td><td class="hidden sm:table-cell" style="color:var(--text-muted)">Documents</td><td class="price-tag whitespace-nowrap text-end sm:text-start">$0.50 /set</td></tr>
+              <tr><td>Spiral Binding<span class="block sm:hidden text-xs" style="color:var(--text-muted)">Documents</span></td><td class="hidden sm:table-cell" style="color:var(--text-muted)">Documents</td><td class="price-tag whitespace-nowrap text-end sm:text-start">$3.50 /set</td></tr>
+              <tr><td>Hardcover Binding<span class="block sm:hidden text-xs" style="color:var(--text-muted)">Documents</span></td><td class="hidden sm:table-cell" style="color:var(--text-muted)">Documents</td><td class="price-tag whitespace-nowrap text-end sm:text-start">$9.00 /set</td></tr>
+              <tr><td>Grommets or Stakes<span class="block sm:hidden text-xs" style="color:var(--text-muted)">Banners &amp; Signs</span></td><td class="hidden sm:table-cell" style="color:var(--text-muted)">Banners &amp; Signs</td><td class="price-tag whitespace-nowrap text-end sm:text-start">Included</td></tr>
+              <tr><td>Rush Turnaround<span class="block sm:hidden text-xs" style="color:var(--text-muted)">Any service</span></td><td class="hidden sm:table-cell" style="color:var(--text-muted)">Any service</td><td class="price-tag whitespace-nowrap text-end sm:text-start">+50%</td></tr>
+              <tr><td>Local Delivery<span class="block sm:hidden text-xs" style="color:var(--text-muted)">Orders $50+</span></td><td class="hidden sm:table-cell" style="color:var(--text-muted)">Orders $50+</td><td class="price-tag whitespace-nowrap text-end sm:text-start">Free</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUME DISCOUNTS -->
+  <section class="py-16 relative overflow-hidden" style="background:var(--ink-900); color:#fff">
+    <div class="absolute inset-0 halftone-bg" aria-hidden="true"></div>
+    <div class="container-shop flex flex-wrap items-center justify-between gap-6 relative" data-reveal="up">
+      <div>
+        <span class="font-mono text-xs tracking-widest" style="color:var(--c-yellow-400)">VOLUME DISCOUNTS</span>
+        <h2 class="font-display text-2xl sm:text-3xl mt-2">Ordering 500+ units? Let&rsquo;s talk price.</h2>
+        <p class="text-white/70 mt-2 max-w-lg">Large-run documents, multi-location banner sets, or custom finishes get a direct quote &mdash; not a per-unit guess.</p>
+      </div>
+      <a href="contact.html" class="btn btn-primary shrink-0">Request a Custom Quote</a>
+    </div>
+  </section>
+
+  <!-- PRICING FAQ -->
+  <section class="container-shop py-20">
+    <div class="max-w-2xl mb-10" data-reveal="up">
+      <span class="font-mono text-xs tracking-widest" style="color:var(--c-blue-600)">PRICING FAQ</span>
+      <h2 class="font-display text-3xl sm:text-4xl mt-2">A few things people ask.</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-x-10 gap-y-8">
+      <div data-reveal="up">
+        <h3 class="font-semibold">Are these prices final?</h3>
+        <p class="text-sm mt-1" style="color:var(--text-muted)">Yes for standard specs. Unusual stock, oversized runs or custom die-cuts get a direct quote instead.</p>
+      </div>
+      <div data-reveal="up">
+        <h3 class="font-semibold">Is there a minimum order?</h3>
+        <p class="text-sm mt-1" style="color:var(--text-muted)">No minimum on documents or photo prints. Business cards are sold by the box (100 units).</p>
+      </div>
+      <div data-reveal="up">
+        <h3 class="font-semibold">How does Rush pricing work?</h3>
+        <p class="text-sm mt-1" style="color:var(--text-muted)">Select &ldquo;Rush&rdquo; when placing your order in the dashboard &mdash; it adds a flat 50% and moves your job to the front of the queue.</p>
+      </div>
+      <div data-reveal="up">
+        <h3 class="font-semibold">Do you price-match?</h3>
+        <p class="text-sm mt-1" style="color:var(--text-muted)">Send us a competitor quote for an identical spec and we&rsquo;ll do our best to match it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILD MY ORDER CTA -->
+  <section class="py-16" style="background:var(--bg-dim)">
+    <div class="container-shop rounded-2xl p-6 sm:p-8 flex flex-wrap items-center justify-between gap-6" data-reveal="up">
+      <div>
+        <h2 class="font-display text-xl">Want the exact total before you order?</h2>
+        <p class="text-sm mt-1" style="color:var(--text-muted)">Build your job in the dashboard and watch the price update live as you choose specs.</p>
+      </div>
+      <a href="dashboard-new-order.html" class="btn btn-primary">Build My Order</a>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer"></footer>
+<div id="back-to-top-root"></div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

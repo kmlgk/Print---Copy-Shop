@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact | Sharpline Print &amp; Copy Co.</title>
+<meta name="description" content="Contact Sharpline Print & Copy Co. — visit our Springfield shop, call, email, or send us your print job details." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%234338CA'/%3E%3Cpath d='M7 8V4h10v4M6 17H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-2' stroke='white' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='7' y='13' width='10' height='7' fill='white'/%3E%3C/svg%3E" />
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem('sharpline-theme');
+      if (!theme) theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('dir', localStorage.getItem('sharpline-dir') || 'ltr');
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css" />
+<style>
+  .field-input{width:100%;padding:.75rem 1rem;border-radius:8px;border:1px solid var(--border);background:var(--bg-elevated);color:var(--text)}
+  .field-input:focus{outline:none;border-color:var(--c-blue-600);box-shadow:0 0 0 3px rgba(67,56,202,.15)}
+  .field-label{font-size:.85rem;font-weight:600;margin-bottom:.4rem;display:block}
+  .field-error{color:var(--c-magenta-600);font-size:.78rem;margin-top:.35rem}
+</style>
+</head>
+<body data-area="public">
+<div id="toast-root"></div>
+<header id="site-header"></header>
+<div id="mobile-drawer-root"></div>
+
+<main id="main-content">
+
+  <section class="relative py-16 sm:py-20 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <img src="https://images.unsplash.com/photo-1605542202587-5849be5054a4?auto=format&fit=crop&w=1600&q=80" alt="Sharpline Print and Copy Co. storefront exterior" class="w-full h-full object-cover" loading="eager" />
+      <div class="absolute inset-0" style="background:rgba(20,22,28,.8)"></div>
+    </div>
+    <div class="container-shop">
+      <nav aria-label="Breadcrumb" class="text-xs text-white/60 mb-4" data-reveal="up"><a href="index.html" class="hover:text-white">Home</a> <span class="mx-1">/</span> <span class="text-white">Contact</span></nav>
+      <h1 class="font-display text-4xl sm:text-6xl text-white" data-reveal="up">LET&rsquo;S TALK ABOUT YOUR JOB</h1>
+      <p class="text-white/70 mt-4 max-w-xl" data-reveal="up">Questions about specs, pricing, or a rush deadline? We usually reply within one business hour.</p>
+    </div>
+  </section>
+
+  <section class="container-shop py-16 grid lg:grid-cols-5 gap-12">
+
+    <form id="contact-form" class="lg:col-span-3 ticket-card p-6 sm:p-8" novalidate data-reveal="left">
+      <span class="ticket-clip" aria-hidden="true"></span>
+      <h2 class="font-display text-2xl mb-6">SEND A MESSAGE</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label class="field-label" for="name">Full name</label>
+          <input class="field-input" type="text" id="name" name="name" data-validate="required|min:2" />
+          <p class="field-error hidden" data-error-for="name">Please enter your name.</p>
+        </div>
+        <div>
+          <label class="field-label" for="email">Email address</label>
+          <input class="field-input" type="email" id="email" name="email" data-validate="required|email" />
+          <p class="field-error hidden" data-error-for="email">Please enter a valid email.</p>
+        </div>
+        <div>
+          <label class="field-label" for="phone">Phone <span class="font-normal" style="color:var(--text-muted)">(optional)</span></label>
+          <input class="field-input" type="tel" id="phone" name="phone" data-validate="phone" />
+          <p class="field-error hidden" data-error-for="phone">Please enter a valid phone number.</p>
+        </div>
+        <div>
+          <label class="field-label" for="subject">What&rsquo;s this about</label>
+          <select class="field-input" id="subject" name="subject" data-validate="required">
+            <option value="">Select one&hellip;</option>
+            <option>Document Printing</option>
+            <option>Business Cards</option>
+            <option>Banners &amp; Signs</option>
+            <option>Photo Prints</option>
+            <option>Order Status</option>
+            <option>Something Else</option>
+          </select>
+          <p class="field-error hidden" data-error-for="subject">Please choose a topic.</p>
+        </div>
+        <div class="sm:col-span-2">
+          <label class="field-label" for="message">Message</label>
+          <textarea class="field-input" id="message" name="message" rows="5" data-validate="required|min:10|max:600"></textarea>
+          <p class="field-error hidden" data-error-for="message">Please enter at least 10 characters.</p>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-6 w-full sm:w-auto">Send Message</button>
+    </form>
+
+    <aside class="lg:col-span-2 space-y-6" data-reveal="right">
+      <div class="info-panel">
+        <h3 class="font-display text-lg mb-4">VISIT THE SHOP</h3>
+        <dl class="text-sm space-y-3" style="color:var(--text-muted)">
+          <div><dt class="font-semibold" style="color:var(--text)">Address</dt><dd>14 Ludgate Row, Springfield, IL 62701</dd></div>
+          <div><dt class="font-semibold" style="color:var(--text)">Phone</dt><dd><a href="tel:+15551230199" class="hover:text-[var(--c-blue-600)]">+1 (555) 123-0199</a></dd></div>
+          <div><dt class="font-semibold" style="color:var(--text)">Email</dt><dd><a href="mailto:orders@sharplineprint.com" class="hover:text-[var(--c-blue-600)]">orders@sharplineprint.com</a></dd></div>
+        </dl>
+      </div>
+      <div class="info-panel">
+        <h3 class="font-display text-lg mb-4">HOURS</h3>
+        <dl class="text-sm space-y-2" style="color:var(--text-muted)">
+          <div class="flex justify-between"><dt>Monday &ndash; Saturday</dt><dd style="color:var(--text)">8:00 AM &ndash; 8:00 PM</dd></div>
+          <div class="flex justify-between"><dt>Sunday</dt><dd style="color:var(--text)">10:00 AM &ndash; 4:00 PM</dd></div>
+        </dl>
+      </div>
+      <div class="rounded-2xl overflow-hidden border" style="border-color:var(--border)">
+        <iframe title="Map showing Sharpline Print and Copy Co. location in Springfield, IL" src="https://maps.google.com/maps?q=Springfield%2C%20IL&z=14&output=embed" class="w-full h-56 border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </aside>
+
+  </section>
+
+  <!-- DEPARTMENTS -->
+  <section class="py-20" style="background:var(--bg-dim)">
+    <div class="container-shop">
+      <div class="max-w-2xl mb-12" data-reveal="up">
+        <span class="font-mono text-xs tracking-widest" style="color:var(--c-blue-600)">REACH THE RIGHT PERSON</span>
+        <h2 class="font-display text-3xl sm:text-4xl mt-2">Contact by department.</h2>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="info-panel" style="border-inline-start:3px solid var(--c-blue-600)" data-reveal="up">
+          <h3 class="font-display text-lg">GENERAL INQUIRIES</h3>
+          <p class="text-sm mt-2" style="color:var(--text-muted)">Questions about services, hours, or anything else.</p>
+          <a href="mailto:hello@sharplineprint.com" class="text-sm font-medium mt-3 block hover:text-[var(--c-blue-600)]" style="color:var(--c-blue-600)">hello@sharplineprint.com</a>
+        </div>
+        <div class="info-panel" style="border-inline-start:3px solid var(--c-magenta-500)" data-reveal="up">
+          <h3 class="font-display text-lg">ORDER SUPPORT</h3>
+          <p class="text-sm mt-2" style="color:var(--text-muted)">Track an existing job or ask about a specific order.</p>
+          <a href="mailto:orders@sharplineprint.com" class="text-sm font-medium mt-3 block hover:text-[var(--c-blue-600)]" style="color:var(--c-blue-600)">orders@sharplineprint.com</a>
+        </div>
+        <div class="info-panel" style="border-inline-start:3px solid var(--c-yellow-500)" data-reveal="up">
+          <h3 class="font-display text-lg">BULK &amp; CUSTOM QUOTES</h3>
+          <p class="text-sm mt-2" style="color:var(--text-muted)">500+ unit orders, custom finishes, or multi-location delivery.</p>
+          <a href="mailto:quotes@sharplineprint.com" class="text-sm font-medium mt-3 block hover:text-[var(--c-blue-600)]" style="color:var(--c-blue-600)">quotes@sharplineprint.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container-shop py-20 max-w-3xl">
+    <div class="mb-10" data-reveal="up">
+      <span class="font-mono text-xs tracking-widest" style="color:var(--c-magenta-500)">BEFORE YOU REACH OUT</span>
+      <h2 class="font-display text-3xl sm:text-4xl mt-2">Quick answers.</h2>
+    </div>
+    <div class="space-y-3" data-reveal="up">
+      <details class="group rounded-xl border p-5" style="border-color:var(--border)">
+        <summary class="flex items-center justify-between cursor-pointer font-semibold list-none">How fast do you reply?<span class="transition-transform group-open:rotate-180">&darr;</span></summary>
+        <p class="text-sm mt-3" style="color:var(--text-muted)">Within one business hour during shop hours (Mon&ndash;Sat 8am&ndash;8pm, Sun 10am&ndash;4pm). Messages sent overnight are answered first thing the next morning.</p>
+      </details>
+      <details class="group rounded-xl border p-5" style="border-color:var(--border)">
+        <summary class="flex items-center justify-between cursor-pointer font-semibold list-none">Can I get a quote without an account?<span class="transition-transform group-open:rotate-180">&darr;</span></summary>
+        <p class="text-sm mt-3" style="color:var(--text-muted)">Yes &mdash; send your specs through this form or call us. You&rsquo;ll only need an account to upload a file and track the job.</p>
+      </details>
+      <details class="group rounded-xl border p-5" style="border-color:var(--border)">
+        <summary class="flex items-center justify-between cursor-pointer font-semibold list-none">Do you accept walk-ins?<span class="transition-transform group-open:rotate-180">&darr;</span></summary>
+        <p class="text-sm mt-3" style="color:var(--text-muted)">Absolutely &mdash; bring a USB drive or email us your file ahead of time and we&rsquo;ll have it ready when you arrive.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer"></footer>
+<div id="back-to-top-root"></div>
+
+<script src="assets/js/main.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var form = document.getElementById("contact-form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!window.validateForm(form)) return;
+      if (window.showToast) window.showToast("Message sent — we'll reply within one business hour.");
+      form.reset();
+    });
+  });
+</script>
+</body>
+</html>

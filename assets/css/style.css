@@ -1,0 +1,488 @@
+/* ============================================================
+   Sharpline Print & Copy Co. — Template 10
+   Design system: Indigo + Amber palette (rose accent), torn-paper
+   motifs, receipt/ticket cards, Anton + IBM Plex Sans + IBM Plex Mono
+   ============================================================ */
+
+:root {
+  /* Indigo (primary) + Amber (secondary) + Rose (accent) brand ramp.
+     Token names (--c-blue-*, --c-magenta-*, --c-yellow-*) are kept from
+     the original CMYK palette to avoid a site-wide variable rename —
+     only the values changed. */
+  --c-blue-50:  #eef2ff;
+  --c-blue-100: #e0e7ff;
+  --c-blue-300: #a5b4fc;
+  --c-blue-500: #6366f1;
+  --c-blue-600: #4338ca; /* primary */
+  --c-blue-700: #372aa8;
+  --c-blue-800: #312e81;
+  --c-blue-900: #26216b;
+
+  --c-magenta-50:  #fffbeb;
+  --c-magenta-100: #fef3c7;
+  --c-magenta-300: #fcd34d;
+  --c-magenta-500: #f59e0b; /* secondary */
+  --c-magenta-600: #d97706;
+  --c-magenta-700: #b45309;
+
+  --c-yellow-300: #fecdd3;
+  --c-yellow-400: #fda4af;
+  --c-yellow-500: #fb7185; /* accent */
+  --c-yellow-600: #e11d48;
+
+  --paper: #fafaf7;
+  --paper-dim: #f2f1ea;
+  --ink-900: #14161c;
+  --ink-800: #1b1e27;
+  --ink-700: #262a36;
+  --ink-600: #333846;
+  --ink-400: #6b7180;
+  --ink-200: #d7d9df;
+
+  --bg: var(--paper);
+  --bg-elevated: #ffffff;
+  --bg-dim: var(--paper-dim);
+  --text: var(--ink-900);
+  --text-muted: var(--ink-400);
+  --border: #e4e2d8;
+  --header-bg: rgba(250, 250, 247, 0.86);
+  --shadow-color: 243 25% 12%;
+
+  /* Theme-aware icon/badge tints — soft on paper, soft on ink, never a hard
+     light-50 chip stranded on a dark card (the one-tone-fits-both-themes trap). */
+  --tint-blue: rgba(67, 56, 202, .09);
+  --tint-magenta: rgba(245, 158, 11, .10);
+  --tint-yellow: rgba(251, 113, 133, .20);
+
+  --font-display: 'Anton', 'Arial Narrow', sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
+}
+
+:root[data-theme="dark"] {
+  --bg: var(--ink-900);
+  --bg-elevated: var(--ink-800);
+  --bg-dim: var(--ink-700);
+  --text: #f5f4ef;
+  --text-muted: #9aa0b1;
+  --border: #2c303c;
+  --header-bg: rgba(20, 22, 28, 0.86);
+  --tint-blue: rgba(99, 102, 241, .20);
+  --tint-magenta: rgba(252, 211, 77, .18);
+  --tint-yellow: rgba(253, 164, 175, .18);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: var(--ink-900);
+    --bg-elevated: var(--ink-800);
+    --bg-dim: var(--ink-700);
+    --text: #f5f4ef;
+    --text-muted: #9aa0b1;
+    --border: #2c303c;
+    --header-bg: rgba(20, 22, 28, 0.86);
+    --tint-blue: rgba(99, 102, 241, .20);
+    --tint-magenta: rgba(252, 211, 77, .18);
+    --tint-yellow: rgba(253, 164, 175, .18);
+  }
+}
+
+* { scrollbar-color: var(--c-blue-600) var(--bg-dim); }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+/* Defensive: some fixed-width/min-width content (e.g. data tables in an
+   overflow-x:auto wrapper) can still force the document root wider than the
+   viewport on narrow screens even though it's visually clipped correctly.
+   Clipping horizontal overflow at the root guarantees no page-level side
+   -scroll can ever occur, without affecting any element's own internal
+   overflow-x:auto scrolling. */
+html, body { overflow-x: hidden; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  transition: background-color .25s ease, color .25s ease;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.font-mono { font-family: var(--font-mono); }
+
+/* Focus visibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid var(--c-blue-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---------------- Layout helpers ---------------- */
+.container-shop { max-width: 1280px; margin-inline: auto; padding-inline: 1.25rem; }
+@media (min-width: 640px) { .container-shop { padding-inline: 2rem; } }
+
+/* ---------------- Header ---------------- */
+/* Truly fixed (not sticky) so it always stays pinned to the viewport top,
+   regardless of scroll direction or any ancestor stacking-context quirks.
+   #main-content gets a matching padding-top set by JS (syncHeaderHeight in
+   main.js) so fixed positioning never covers page content. */
+#site-header {
+  position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 60;
+  background: var(--header-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+#site-header.scrolled { border-bottom-color: var(--border); box-shadow: 0 8px 24px -16px hsl(var(--shadow-color) / 0.35); }
+
+.turnaround-pill {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+.nav-link { position: relative; font-weight: 500; }
+.nav-link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px;
+  background: var(--c-blue-600); transform: scaleX(0); transform-origin: right;
+  transition: transform .25s ease;
+}
+.nav-link:hover::after, .nav-link[aria-current="page"]::after { transform: scaleX(1); transform-origin: left; }
+.nav-link[aria-current="page"] { color: var(--c-blue-600); }
+
+/* ---------------- Nav dropdown (Home 1 / Home 2) ----------------
+   Pure CSS hover + focus-within reveal — no JS needed, so it can't
+   break from a script error and keyboard tabbing keeps it open. */
+.nav-dropdown { position: relative; }
+.nav-dropdown-panel {
+  position: absolute; top: 100%; inset-inline-start: 0; margin-top: .6rem;
+  background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 12px;
+  box-shadow: 0 20px 40px -20px hsl(var(--shadow-color) / 0.4);
+  min-width: 160px; padding: .4rem; z-index: 70;
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+}
+.nav-dropdown:hover .nav-dropdown-panel,
+.nav-dropdown:focus-within .nav-dropdown-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dropdown-chevron { transition: transform .18s ease; }
+.nav-dropdown:hover .nav-dropdown-chevron,
+.nav-dropdown:focus-within .nav-dropdown-chevron { transform: rotate(180deg); }
+@media (prefers-reduced-motion: reduce) {
+  .nav-dropdown-panel, .nav-dropdown-chevron { transition: none; }
+}
+
+/* ---------------- Buttons ----------------
+   Clean elevated style: solid fill, soft colour-tinted shadow that grows
+   and a gentle lift on hover — replaces the earlier hard-offset "stamp"
+   shadow, which read as a mismatch against the Indigo/Amber palette. */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font-weight: 600; border-radius: 10px; padding: .8rem 1.75rem; transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease; white-space: nowrap; }
+.btn:active { transform: translateY(0); box-shadow: none; }
+.btn-primary { background: var(--c-blue-600); color: #fff; box-shadow: 0 4px 14px -4px rgba(67, 56, 202, .45); }
+.btn-primary:hover { background: var(--c-blue-700); box-shadow: 0 12px 24px -8px rgba(67, 56, 202, .55); transform: translateY(-2px); }
+.btn-secondary { background: var(--c-magenta-500); color: var(--ink-900); box-shadow: 0 4px 14px -4px rgba(245, 158, 11, .4); }
+.btn-secondary:hover { background: var(--c-magenta-600); color: #fff; box-shadow: 0 12px 24px -8px rgba(245, 158, 11, .5); transform: translateY(-2px); }
+.btn-outline { border: 2px solid var(--text); color: var(--text); background: transparent; }
+.btn-outline:hover { background: var(--text); color: var(--bg); transform: translateY(-2px); box-shadow: 0 10px 20px -10px hsl(var(--shadow-color) / .35); }
+.btn-ghost { color: var(--text); background: transparent; }
+.btn-ghost:hover { background: var(--bg-dim); }
+.btn-sm { padding: .55rem 1.15rem; font-size: .85rem; }
+
+/* ---------------- Receipt / Ticket cards ---------------- */
+.ticket-card {
+  position: relative;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  height: 100%;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.ticket-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -24px hsl(var(--shadow-color) / 0.45); border-color: var(--c-blue-300); }
+.ticket-card .ticket-clip {
+  position: absolute; top: -8px; inset-inline-end: 20px; width: 28px; height: 40px;
+  border: 3px solid var(--c-blue-600); border-radius: 40% 40% 0 0 / 60% 60% 0 0;
+  border-bottom: none; opacity: .55; pointer-events: none;
+}
+.ticket-tear {
+  border-top: 2px dashed var(--border);
+  position: relative;
+  margin-top: auto;
+}
+.ticket-tear::before, .ticket-tear::after {
+  content: ""; position: absolute; top: -8px; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--bg); border: 1px solid var(--border);
+}
+.ticket-tear::before { inset-inline-start: -9px; }
+.ticket-tear::after { inset-inline-end: -9px; }
+.price-tag { font-family: var(--font-mono); font-weight: 700; }
+
+/* ---------------- Price plate (pricing cards) ----------------
+   Distinct from .ticket-card — no paperclip/tear motif. A top CMYK
+   gradient bar + icon badge instead, reserved for pricing content only. */
+.price-plate {
+  position: relative;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  height: 100%;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.price-plate::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--c-blue-600), var(--c-magenta-500), var(--c-yellow-500));
+}
+.price-plate:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -28px hsl(var(--shadow-color) / 0.5); }
+.plate-icon {
+  width: 46px; height: 46px; border-radius: 13px; font-size: 1.35rem;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;
+}
+
+/* ---------------- Quote card (testimonials) ----------------
+   Distinct from .ticket-card — a decorative quote glyph + accent rail,
+   reserved for testimonial/review content only. */
+.quote-card {
+  position: relative;
+  background: var(--bg-elevated);
+  border-radius: 18px;
+  padding: 2.25rem 1.75rem 1.75rem;
+  border-inline-start: 3px solid var(--c-blue-600);
+  box-shadow: 0 12px 32px -26px hsl(var(--shadow-color) / 0.45);
+  height: 100%;
+  display: flex; flex-direction: column;
+}
+/* Swiper's own flex-stretch can end up a few px short on one slide once
+   avatar images finish loading and shift text reflow — a fixed min-height
+   guarantees every testimonial card in the carousel reads as identical,
+   regardless of exact testimonial length. */
+.testimonial-swiper .quote-card { min-height: 230px; }
+.quote-card::before {
+  content: "\201C";
+  position: absolute; top: .1rem; inset-inline-start: 1.25rem;
+  font-family: Georgia, 'Times New Roman', serif; font-size: 3.75rem; line-height: 1;
+  color: var(--c-blue-100); z-index: 0;
+}
+:root[data-theme="dark"] .quote-card::before { color: var(--ink-600); }
+.quote-card > * { position: relative; z-index: 1; }
+
+/* ---------------- Stat tile (simple metric panels) ----------------
+   Flat, no motif — for dashboard stat numbers and other plain metrics. */
+.stat-tile {
+  background: var(--bg-dim);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+/* ---------------- Info panel (plain content boxes) ----------------
+   For sidebar/reference content that isn't a product, price, quote or
+   stat — e.g. contact details, spec option groups, order info lists. */
+.info-panel {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+.info-panel-cta { transition: transform .25s ease, border-color .25s ease; }
+.info-panel-cta:hover { transform: translateY(-4px); border-color: var(--c-blue-300); }
+
+/* ---------------- Bento gallery tiles (Home 1 preview) ----------------
+   Distinct from Home 2's asymmetric editorial grid and the Gallery page's
+   masonry + lightbox — a fixed-shape bento grid with one CTA tile baked in. */
+.bento-tile { position: relative; border-radius: 20px; overflow: hidden; display: block; height: 100%; }
+.bento-tile img { transition: transform .5s ease; display: block; width: 100%; height: 100%; object-fit: cover; }
+.bento-tile:hover img { transform: scale(1.07); }
+.bento-caption {
+  position: absolute; inset-inline: 0; bottom: 0; padding: 1rem 1.1rem;
+  color: #fff; font-weight: 600; font-size: .85rem;
+  background: linear-gradient(to top, rgba(0,0,0,.75), transparent 75%);
+}
+.bento-badge {
+  position: absolute; top: .85rem; inset-inline-start: .85rem;
+  font-family: var(--font-mono); font-size: .65rem; letter-spacing: .04em;
+  padding: .3rem .6rem; border-radius: 999px; color: #fff;
+  background: rgba(20, 22, 28, .55); backdrop-filter: blur(6px);
+}
+.bento-cta {
+  border-radius: 20px; height: 100%; display: flex; flex-direction: column;
+  justify-content: center; align-items: flex-start; padding: 1.75rem;
+  background: var(--ink-900); color: #fff; position: relative; overflow: hidden;
+  transition: background-color .25s ease;
+}
+.bento-cta:hover { background: var(--c-blue-700); }
+
+/* ---------------- Printed receipt (Home 1 pricing teaser) ----------------
+   A literal print-shop receipt mockup instead of another card grid — stays
+   paper-white/ink-black in both themes on purpose, like a photographed object. */
+.receipt-card {
+  width: 100%; max-width: 340px; margin-inline: auto;
+  background: #fdfdfb; color: #14161c;
+  font-family: var(--font-mono);
+  padding: 2rem 1.75rem 2.5rem;
+  box-shadow: 0 30px 60px -28px hsl(var(--shadow-color) / 0.55);
+  transform: rotate(-1.4deg);
+  clip-path: polygon(
+    0 0, 100% 0,
+    100% calc(100% - 10px), 95% 100%, 90% calc(100% - 10px),
+    85% 100%, 80% calc(100% - 10px), 75% 100%, 70% calc(100% - 10px),
+    65% 100%, 60% calc(100% - 10px), 55% 100%, 50% calc(100% - 10px),
+    45% 100%, 40% calc(100% - 10px), 35% 100%, 30% calc(100% - 10px),
+    25% 100%, 20% calc(100% - 10px), 15% 100%, 10% calc(100% - 10px),
+    5% 100%, 0 calc(100% - 10px)
+  );
+}
+.receipt-header { text-align: center; }
+.receipt-header .receipt-store { font-family: var(--font-display); font-size: 1.15rem; letter-spacing: .03em; }
+.receipt-header p { font-size: .7rem; color: #4a4d57; margin-top: .2rem; }
+.receipt-divider { border-top: 1px dashed #a8a8a0; margin: 1rem 0; }
+.receipt-line { display: flex; justify-content: space-between; gap: .75rem; font-size: .78rem; padding: .3rem 0; }
+.receipt-line small { color: #6b6f7a; font-size: .68rem; }
+.receipt-total { font-weight: 700; }
+.receipt-barcode {
+  height: 34px; margin: 1.1rem 0 .6rem;
+  background-image: repeating-linear-gradient(90deg,
+    #14161c 0 2px, transparent 2px 5px,
+    #14161c 5px 6px, transparent 6px 10px,
+    #14161c 10px 13px, transparent 13px 16px,
+    #14161c 16px 17px, transparent 17px 22px,
+    #14161c 22px 24px, transparent 24px 28px);
+}
+.receipt-footer { text-align: center; font-size: .68rem; letter-spacing: .04em; color: #4a4d57; }
+
+/* ---------------- Chat-bubble FAQ (Home 1) ----------------
+   A conversational Q&A layout instead of an accordion — every answer is
+   visible by default (no JS dependency, better for scanning and SEO). */
+.chat-avatar {
+  width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: .95rem;
+}
+.chat-avatar-user { background: var(--bg-dim); }
+.chat-avatar-shop { background: var(--c-blue-600); color: #fff; }
+.chat-bubble { max-width: 80%; padding: .85rem 1.15rem; border-radius: 18px; font-size: .9rem; line-height: 1.55; }
+.chat-bubble-q { background: var(--bg-dim); color: var(--text); border-end-end-radius: 4px; font-weight: 600; }
+.chat-bubble-a { background: var(--c-blue-600); color: #fff; border-end-start-radius: 4px; }
+
+/* ---------------- Price table (shared) ----------------
+   Reusable comparison-table styling for pricing.html and the services.html
+   "at a glance" table — kept global instead of per-page inline <style>. */
+.price-table td, .price-table th { padding: .85rem 1rem; }
+.price-table tr:not(:last-child) td, .price-table tr:not(:last-child) th { border-bottom: 1px solid var(--border); }
+
+/* ---------------- Torn paper footer ---------------- */
+.torn-top {
+  position: relative;
+  clip-path: polygon(
+    0% 6%, 3% 0%, 6% 5%, 9% 1%, 12% 6%, 15% 0%, 18% 5%, 21% 2%, 24% 6%, 27% 0%,
+    30% 5%, 33% 1%, 36% 6%, 39% 0%, 42% 5%, 45% 2%, 48% 6%, 51% 0%, 54% 5%, 57% 1%,
+    60% 6%, 63% 0%, 66% 5%, 69% 2%, 72% 6%, 75% 0%, 78% 5%, 81% 1%, 84% 6%, 87% 0%,
+    90% 5%, 93% 2%, 96% 6%, 100% 0%, 100% 100%, 0% 100%
+  );
+  padding-top: 3.5rem;
+}
+
+/* ---------------- Section reveal (native IntersectionObserver) ----------------
+   [data-reveal] is visible by default. The "hide, then reveal on scroll" behaviour
+   is opt-in via .js-reveal-active, added by JS only after IntersectionObserver is
+   confirmed available. This means content can never be stuck invisible — not from
+   a blocked/slow script, not from a no-JS browser, not from a mistimed animation
+   library (a prior GSAP ScrollTrigger implementation here went stale against
+   lazy-loaded images shifting the layout after trigger positions were calculated). */
+[data-reveal] { opacity: 1; }
+.js-reveal-active [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.js-reveal-active [data-reveal].is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal-active [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------------- Printing progress bar ---------------- */
+.print-progress { height: 8px; border-radius: 999px; background: var(--bg-dim); overflow: hidden; position: relative; }
+.print-progress > span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--c-blue-600), var(--c-magenta-500), var(--c-yellow-500)); background-size: 200% 100%; animation: progress-shift 2.4s linear infinite; }
+@keyframes progress-shift { from { background-position: 0% 0; } to { background-position: 200% 0; } }
+@media (prefers-reduced-motion: reduce) { .print-progress > span { animation: none; } }
+
+.status-badge { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .05em; text-transform: uppercase; padding: .3rem .6rem; border-radius: 999px; font-weight: 600; display: inline-flex; align-items: center; gap: .35rem; }
+.status-received { background: var(--c-blue-50); color: var(--c-blue-700); }
+.status-processing { background: var(--c-magenta-100); color: var(--c-magenta-700); }
+.status-printing { background: var(--c-yellow-300); color: #9f1239; }
+.status-ready { background: #d5f5e3; color: #157347; }
+.status-picked_up { background: var(--bg-dim); color: var(--text-muted); }
+:root[data-theme="dark"] .status-received { background: rgba(99,102,241,.18); color: #a5b4fc; }
+:root[data-theme="dark"] .status-processing { background: rgba(217,119,6,.20); color: #fcd34d; }
+:root[data-theme="dark"] .status-printing { background: rgba(251,113,133,.18); color: #fda4af; }
+:root[data-theme="dark"] .status-ready { background: rgba(21,115,71,.25); color: #6ee7a8; }
+
+/* ---------------- Halftone / dot texture ---------------- */
+.halftone-bg {
+  background-image: radial-gradient(var(--c-blue-600) 1px, transparent 1px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+:root[data-theme="dark"] .halftone-bg { opacity: 0.12; }
+
+.crop-mark { position: absolute; width: 18px; height: 18px; border: 2px solid currentColor; }
+.crop-mark.tl { top: 0; left: 0; border-right: none; border-bottom: none; }
+.crop-mark.tr { top: 0; right: 0; border-left: none; border-bottom: none; }
+.crop-mark.bl { bottom: 0; left: 0; border-right: none; border-top: none; }
+.crop-mark.br { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+/* ---------------- Mobile drawer ---------------- */
+#mobile-drawer { transition: transform .3s ease; }
+#mobile-drawer.closed { transform: translateX(100%); }
+[dir="rtl"] #mobile-drawer.closed { transform: translateX(-100%); }
+#mobile-drawer-backdrop { transition: opacity .3s ease; }
+
+/* ---------------- Dashboard sidebar ---------------- */
+#dash-sidebar { transition: transform .3s ease; }
+#dash-sidebar.closed { transform: translateX(-100%); }
+[dir="rtl"] #dash-sidebar.closed { transform: translateX(100%); }
+#dash-sidebar-backdrop { transition: opacity .3s ease; }
+@media (min-width: 1024px) {
+  #dash-sidebar.closed, [dir="rtl"] #dash-sidebar.closed { transform: none; }
+}
+
+/* Suppresses the slide transition for one paint while `dir` flips, so the
+   drawer/sidebar's hidden position updates instantly instead of animating
+   across the screen (see setDir() in main.js). */
+.dir-switching { transition: none !important; }
+
+/* ---------------- Skip link ---------------- */
+.skip-link { position: absolute; left: -9999px; top: 0; background: var(--c-blue-600); color: #fff; padding: .75rem 1.25rem; z-index: 100; border-radius: 0 0 8px 0; }
+.skip-link:focus { left: 0; }
+
+/* ---------------- Misc ---------------- */
+.hero-marker { text-decoration: none; background: linear-gradient(120deg, var(--c-yellow-400) 0%, var(--c-yellow-400) 100%); background-repeat: no-repeat; background-size: 100% 40%; background-position: 0 88%; padding: 0 .1em; }
+.stat-num { font-family: var(--font-mono); }
+.back-to-top { position: fixed; bottom: 1.5rem; inset-inline-end: 1.5rem; z-index: 50; opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s ease, transform .25s ease; }
+.back-to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+.upload-zone { border: 2px dashed var(--border); border-radius: 12px; transition: border-color .2s ease, background-color .2s ease; }
+.upload-zone.dragover { border-color: var(--c-blue-600); background: var(--c-blue-50); }
+
+.filter-btn, .tab-btn { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+.is-active-tab { background: var(--c-blue-600) !important; color: #fff !important; border-color: var(--c-blue-600) !important; }
+:root[data-theme="dark"] .upload-zone.dragover { background: rgba(67,56,202,.18); }
+
+.step-line { background: repeating-linear-gradient(90deg, var(--border) 0 8px, transparent 8px 16px); height: 2px; }
+
+.toast { position: fixed; bottom: 1.5rem; inset-inline-start: 50%; transform: translate(-50%, 20px); background: var(--ink-900); color: #fff; padding: .85rem 1.5rem; border-radius: 8px; box-shadow: 0 12px 32px -12px rgba(0,0,0,.5); opacity: 0; pointer-events: none; transition: opacity .25s ease, transform .25s ease; z-index: 200; font-size: .9rem; }
+[dir="rtl"] .toast { transform: translate(50%, 20px); }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+[dir="rtl"] .toast.show { transform: translate(50%, 0); }
+
+::selection { background: var(--c-yellow-400); color: var(--ink-900); }
