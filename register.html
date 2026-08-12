@@ -30,11 +30,9 @@
 </head>
 <body data-area="public">
 <div id="toast-root"></div>
-<header id="site-header"></header>
-<div id="mobile-drawer-root"></div>
 
 <main id="main-content">
-  <section class="grid lg:grid-cols-2 min-h-[calc(100vh-4rem)]">
+  <section class="grid lg:grid-cols-2 min-h-screen">
     <div class="flex items-center justify-center p-6 sm:p-12 order-2 lg:order-1">
       <div class="w-full max-w-sm" data-reveal="up">
         <h1 class="font-display text-3xl">CREATE YOUR ACCOUNT</h1>
@@ -75,16 +73,13 @@
     <div class="relative hidden lg:block order-1 lg:order-2">
       <img src="https://images.unsplash.com/photo-1613395450289-e560907d9308?auto=format&fit=crop&w=1000&q=80" alt="Printer ready to produce a freshly submitted print job" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
       <div class="absolute inset-0" style="background:linear-gradient(200deg, rgba(245,158,11,.85), rgba(20,22,28,.85))"></div>
-      <div class="relative h-full flex flex-col justify-end p-12 text-white">
+      <div class="relative h-full flex flex-col items-center justify-end text-center p-12 text-white">
         <p class="font-display text-3xl leading-tight">&ldquo;Same-day turnaround, tracked live.&rdquo;</p>
         <p class="text-white/70 mt-3 text-sm">See your job move from Received to Ready for Pickup in real time.</p>
       </div>
     </div>
   </section>
 </main>
-
-<footer id="site-footer"></footer>
-<div id="back-to-top-root"></div>
 
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/dashboard.js" defer></script>

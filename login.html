@@ -30,15 +30,13 @@
 </head>
 <body data-area="public">
 <div id="toast-root"></div>
-<header id="site-header"></header>
-<div id="mobile-drawer-root"></div>
 
 <main id="main-content">
-  <section class="grid lg:grid-cols-2 min-h-[calc(100vh-4rem)]">
+  <section class="grid lg:grid-cols-2 min-h-screen">
     <div class="relative hidden lg:block">
       <img src="https://images.unsplash.com/photo-1587307307189-0354b351e9e1?auto=format&fit=crop&w=1000&q=80" alt="Printer ready to produce a new job at Sharpline" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
       <div class="absolute inset-0" style="background:linear-gradient(160deg, rgba(67,56,202,.85), rgba(20,22,28,.85))"></div>
-      <div class="relative h-full flex flex-col justify-end p-12 text-white">
+      <div class="relative h-full flex flex-col items-center justify-end text-center p-12 text-white">
         <p class="font-display text-3xl leading-tight">&ldquo;Upload once, reorder anytime.&rdquo;</p>
         <p class="text-white/70 mt-3 text-sm">Every job you place is saved to your account &mdash; track status and reorder with one click.</p>
       </div>
@@ -72,9 +70,6 @@
     </div>
   </section>
 </main>
-
-<footer id="site-footer"></footer>
-<div id="back-to-top-root"></div>
 
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/dashboard.js" defer></script>

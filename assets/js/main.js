@@ -18,7 +18,8 @@
     { href: "pricing.html", label: "Pricing" },
     { href: "gallery.html", label: "Gallery" },
     { href: "about.html", label: "About" },
-    { href: "contact.html", label: "Contact" }
+    { href: "contact.html", label: "Contact" },
+    { href: "dashboard.html", label: "Dashboard" }
   ];
 
   function currentFile() {
@@ -76,12 +77,18 @@
   var ICONS = {
     sun: '<svg data-theme-icon-sun class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
     moon: '<svg data-theme-icon-moon class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>',
-    globe: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg>',
+    textDirection: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h13M3 12h9M3 19h13"/><path d="M18 9l3 3-3 3"/></svg>',
     menu: '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
     close: '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
     printer: '<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>',
-    user: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 16 0v1"/></svg>',
-    arrowUp: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>'
+    arrowUp: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>',
+    pin: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
+    clock: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
+    phone: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>',
+    mail: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>',
+    facebook: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg>',
+    instagram: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>',
+    linkedin: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>'
   };
 
   /* ---------------- Header ---------------- */
@@ -100,10 +107,13 @@
             (itemActive ? ' aria-current="page" style="color:var(--c-blue-600)"' : '') + '>' + d.label + '</a>';
         }).join("");
         return '<div class="nav-dropdown">' +
-          '<a href="' + defaultHref + '" class="nav-link px-1 py-2 text-sm text-[var(--text)] hover:text-[var(--c-blue-600)] inline-flex items-center gap-1"' +
-            (groupActive ? ' aria-current="page"' : '') + '>' + l.label +
-            '<svg class="nav-dropdown-chevron w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>' +
-          '</a>' +
+          '<span class="inline-flex items-center gap-1">' +
+            '<a href="' + defaultHref + '" class="nav-dropdown-trigger nav-link px-1 py-2 text-sm text-[var(--text)] hover:text-[var(--c-blue-600)]" aria-haspopup="true" aria-expanded="false"' +
+              (groupActive ? ' aria-current="page"' : '') + '>' + l.label + '</a>' +
+            '<button type="button" class="nav-dropdown-toggle p-1 -ms-1 text-[var(--text)] hover:text-[var(--c-blue-600)]" aria-haspopup="true" aria-expanded="false" aria-label="Toggle ' + l.label + ' menu">' +
+              '<svg class="nav-dropdown-chevron w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>' +
+            '</button>' +
+          '</span>' +
           '<div class="nav-dropdown-panel" role="menu" aria-label="Home pages">' + itemsHtml + '</div>' +
         '</div>';
       }
@@ -142,9 +152,8 @@
         '<nav class="hidden lg:flex items-center gap-6 flex-1 justify-center" aria-label="Primary">' + linksHtml + '</nav>' +
         '<div class="hidden lg:flex items-center gap-2 shrink-0">' +
           '<button type="button" id="theme-toggle" class="p-2 rounded-md hover:bg-[var(--bg-dim)]" aria-label="Toggle dark mode">' + ICONS.sun + ICONS.moon + '</button>' +
-          '<button type="button" id="dir-toggle" class="p-2 rounded-md hover:bg-[var(--bg-dim)] flex items-center gap-1 text-xs font-mono" aria-label="Toggle text direction">' + ICONS.globe + '<span data-dir-label>RTL</span></button>' +
-          '<a href="login.html" class="p-2 rounded-md hover:bg-[var(--bg-dim)]" aria-label="Account login">' + ICONS.user + '</a>' +
-          '<a href="dashboard-new-order.html" class="btn btn-primary btn-sm ms-1">Start a Print Job</a>' +
+          '<button type="button" id="dir-toggle" class="p-2 rounded-md hover:bg-[var(--bg-dim)] flex items-center gap-1 text-xs font-mono" aria-label="Toggle text direction">' + ICONS.textDirection + '<span data-dir-label>RTL</span></button>' +
+          '<a href="login.html" class="btn btn-primary btn-sm ms-1">Login</a>' +
         '</div>' +
         '<button type="button" id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-[var(--bg-dim)]" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">' + ICONS.menu + '</button>' +
       '</div>';
@@ -162,10 +171,9 @@
           '<div class="p-4 border-t space-y-3" style="border-color:var(--border)">' +
             '<div class="flex items-center gap-2">' +
               '<button type="button" id="theme-toggle-mobile" class="btn btn-outline btn-sm flex-1">' + ICONS.sun + ICONS.moon + ' <span class="ms-1">Theme</span></button>' +
-              '<button type="button" id="dir-toggle-mobile" class="btn btn-outline btn-sm flex-1">' + ICONS.globe + ' <span data-dir-label class="ms-1">RTL</span></button>' +
+              '<button type="button" id="dir-toggle-mobile" class="btn btn-outline btn-sm flex-1">' + ICONS.textDirection + ' <span data-dir-label class="ms-1">RTL</span></button>' +
             '</div>' +
-            '<a href="login.html" class="btn btn-ghost btn-sm w-full">' + ICONS.user + ' <span class="ms-1">My Account</span></a>' +
-            '<a href="dashboard-new-order.html" class="btn btn-primary btn-sm w-full">Start a Print Job</a>' +
+            '<a href="login.html" class="btn btn-primary btn-sm w-full">Login</a>' +
           '</div>' +
         '</div>';
     }
@@ -235,6 +243,46 @@
       if (e.key === "Escape" && drawer && !drawer.classList.contains("closed")) closeDrawer();
     });
 
+    /* Nav dropdown (e.g. "Home") also needs a tap/click path: the CSS
+       :hover/:focus-within reveal alone leaves it unreachable on touch
+       viewports (tablets landing right at the lg breakpoint, ~1024px)
+       where tapping the trigger just navigates instead of opening it. */
+    var dropdowns = document.querySelectorAll(".nav-dropdown");
+    function setDropdownOpen(dropdown, open) {
+      dropdown.classList.toggle("is-open", open);
+      dropdown.querySelectorAll(".nav-dropdown-toggle, .nav-dropdown-trigger").forEach(function (el) {
+        el.setAttribute("aria-expanded", String(open));
+      });
+    }
+    function closeDropdowns(except) {
+      dropdowns.forEach(function (d) {
+        if (d === except) return;
+        setDropdownOpen(d, false);
+      });
+    }
+    dropdowns.forEach(function (dropdown) {
+      /* Both the "Home" label and its chevron toggle the panel — on a
+         tap/click device there's no hover state, so clicking the label
+         itself must not navigate straight past the "Home 2" option;
+         picking a specific page happens from inside the open panel. */
+      var controls = dropdown.querySelectorAll(".nav-dropdown-toggle, .nav-dropdown-trigger");
+      controls.forEach(function (control) {
+        control.addEventListener("click", function (e) {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return;
+          e.preventDefault();
+          var willOpen = !dropdown.classList.contains("is-open");
+          closeDropdowns(dropdown);
+          setDropdownOpen(dropdown, willOpen);
+        });
+      });
+    });
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".nav-dropdown")) closeDropdowns();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeDropdowns();
+    });
+
     /* Fixed header stays pinned always; just toggle the scrolled (shadow) state */
     var header = document.getElementById("site-header");
     window.addEventListener("scroll", function () {
@@ -255,14 +303,15 @@
         '<div class="container-shop pb-10">' +
           '<div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">' +
             '<div>' +
-              '<a href="index.html" class="flex items-center gap-2 font-display text-xl mb-3 text-white">' +
-                '<span class="inline-flex items-center justify-center w-9 h-9 rounded-md" style="background:var(--c-blue-600)">' + ICONS.printer + '</span> SHARPLINE' +
+              '<a href="index.html" class="flex items-center gap-2 font-display text-xl sm:text-2xl tracking-wide mb-3 text-white">' +
+                '<span class="inline-flex items-center justify-center w-10 h-10 rounded-md text-white" style="background:var(--c-blue-600)">' + ICONS.printer + '</span>' +
+                '<span>SHARPLINE</span>' +
               '</a>' +
               '<p class="text-sm leading-relaxed" style="color:#a8acb8">Neighborhood print &amp; copy shop for documents, banners, business cards and photo prints &mdash; precise work, same-day when you need it.</p>' +
               '<div class="flex gap-3 mt-4">' +
-                '<a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full flex items-center justify-center border border-white/15 hover:border-white/40">f</a>' +
-                '<a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full flex items-center justify-center border border-white/15 hover:border-white/40">ig</a>' +
-                '<a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-full flex items-center justify-center border border-white/15 hover:border-white/40">in</a>' +
+                '<a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full flex items-center justify-center border border-white/15 hover:border-white/40 hover:text-white" style="color:#a8acb8">' + ICONS.facebook + '</a>' +
+                '<a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full flex items-center justify-center border border-white/15 hover:border-white/40 hover:text-white" style="color:#a8acb8">' + ICONS.instagram + '</a>' +
+                '<a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-full flex items-center justify-center border border-white/15 hover:border-white/40 hover:text-white" style="color:#a8acb8">' + ICONS.linkedin + '</a>' +
               '</div>' +
             '</div>' +
             '<div>' +
@@ -286,12 +335,12 @@
             '</div>' +
             '<div>' +
               '<h3 class="font-display text-sm tracking-widest mb-4 text-white">VISIT THE SHOP</h3>' +
-              '<ul class="space-y-2 text-sm">' +
-                '<li>14 Ludgate Row, Springfield, IL 62701</li>' +
-                '<li>Mon&ndash;Sat: 8:00 AM &ndash; 8:00 PM</li>' +
-                '<li>Sun: 10:00 AM &ndash; 4:00 PM</li>' +
-                '<li><a href="tel:+15551230199" class="hover:text-white">+1 (555) 123-0199</a></li>' +
-                '<li><a href="mailto:orders@sharplineprint.com" class="hover:text-white">orders@sharplineprint.com</a></li>' +
+              '<ul class="space-y-3 text-sm">' +
+                '<li class="flex items-start gap-2"><span class="shrink-0 mt-0.5" style="color:#a8acb8">' + ICONS.pin + '</span><span>14 Ludgate Row, Springfield, IL 62701</span></li>' +
+                '<li class="flex items-start gap-2"><span class="shrink-0 mt-0.5" style="color:#a8acb8">' + ICONS.clock + '</span><span>Mon&ndash;Sat: 8:00 AM &ndash; 8:00 PM</span></li>' +
+                '<li class="flex items-start gap-2"><span class="shrink-0 mt-0.5" style="color:#a8acb8">' + ICONS.clock + '</span><span>Sun: 10:00 AM &ndash; 4:00 PM</span></li>' +
+                '<li class="flex items-start gap-2"><span class="shrink-0 mt-0.5" style="color:#a8acb8">' + ICONS.phone + '</span><a href="tel:+15551230199" class="hover:text-white">+1 (555) 123-0199</a></li>' +
+                '<li class="flex items-start gap-2"><span class="shrink-0 mt-0.5" style="color:#a8acb8">' + ICONS.mail + '</span><a href="mailto:orders@sharplineprint.com" class="hover:text-white">orders@sharplineprint.com</a></li>' +
               '</ul>' +
             '</div>' +
           '</div>' +
@@ -355,7 +404,7 @@
           '<h1 class="font-display text-lg sm:text-xl truncate">' + pageTitle + '</h1>' +
           '<div class="ms-auto flex items-center gap-1 sm:gap-2">' +
             '<button type="button" id="theme-toggle" class="p-2 rounded-md hover:bg-[var(--bg-dim)]" aria-label="Toggle dark mode">' + ICONS.sun + ICONS.moon + '</button>' +
-            '<button type="button" id="dir-toggle" class="p-2 rounded-md hover:bg-[var(--bg-dim)] hidden sm:flex items-center gap-1 text-xs font-mono" aria-label="Toggle text direction">' + ICONS.globe + '<span data-dir-label>RTL</span></button>' +
+            '<button type="button" id="dir-toggle" class="p-2 rounded-md hover:bg-[var(--bg-dim)] hidden sm:flex items-center gap-1 text-xs font-mono" aria-label="Toggle text direction">' + ICONS.textDirection + '<span data-dir-label>RTL</span></button>' +
             '<div class="w-9 h-9 rounded-full flex items-center justify-center font-mono text-xs font-bold text-white ms-1" style="background:var(--c-magenta-500)" data-account-initials>GC</div>' +
           '</div>' +
         '</div>';

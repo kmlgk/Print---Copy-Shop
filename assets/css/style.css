@@ -17,6 +17,10 @@
   --c-blue-700: #372aa8;
   --c-blue-800: #312e81;
   --c-blue-900: #26216b;
+  /* Theme-aware blue for text/links on a surface that flips light<->dark
+     (labels, inline links on .bg-dim or elevated cards) — #4338ca reads
+     fine on paper but fails contrast once the surface goes dark. */
+  --c-blue-text: var(--c-blue-600);
 
   --c-magenta-50:  #fffbeb;
   --c-magenta-100: #fef3c7;
@@ -70,6 +74,7 @@
   --tint-blue: rgba(99, 102, 241, .20);
   --tint-magenta: rgba(252, 211, 77, .18);
   --tint-yellow: rgba(253, 164, 175, .18);
+  --c-blue-text: var(--c-blue-300);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -84,6 +89,7 @@
     --tint-blue: rgba(99, 102, 241, .20);
     --tint-magenta: rgba(252, 211, 77, .18);
     --tint-yellow: rgba(253, 164, 175, .18);
+    --c-blue-text: var(--c-blue-300);
   }
 }
 
@@ -172,10 +178,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   transition: opacity .18s ease, transform .18s ease, visibility .18s;
 }
 .nav-dropdown:hover .nav-dropdown-panel,
-.nav-dropdown:focus-within .nav-dropdown-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dropdown:focus-within .nav-dropdown-panel,
+.nav-dropdown.is-open .nav-dropdown-panel { opacity: 1; visibility: visible; transform: translateY(0); }
 .nav-dropdown-chevron { transition: transform .18s ease; }
 .nav-dropdown:hover .nav-dropdown-chevron,
-.nav-dropdown:focus-within .nav-dropdown-chevron { transform: rotate(180deg); }
+.nav-dropdown:focus-within .nav-dropdown-chevron,
+.nav-dropdown.is-open .nav-dropdown-chevron { transform: rotate(180deg); }
+.nav-dropdown-toggle { display: inline-flex; align-items: center; justify-content: center; }
 @media (prefers-reduced-motion: reduce) {
   .nav-dropdown-panel, .nav-dropdown-chevron { transition: none; }
 }
