@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Support | Sharpline Print &amp; Copy Co.</title>
+<meta name="description" content="Get help with your Sharpline order — browse FAQs or send our team a message." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%234338CA'/%3E%3Cpath d='M7 8V4h10v4M6 17H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-2' stroke='white' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='7' y='13' width='10' height='7' fill='white'/%3E%3C/svg%3E" />
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem('sharpline-theme');
+      if (!theme) theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('dir', localStorage.getItem('sharpline-dir') || 'ltr');
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css" />
+<style>
+  .field-input{width:100%;padding:.7rem 1rem;border-radius:8px;border:1px solid var(--border);background:var(--bg-elevated);color:var(--text)}
+  .field-input:focus{outline:none;border-color:var(--c-blue-600);box-shadow:0 0 0 3px rgba(67,56,202,.15)}
+  .field-label{font-size:.85rem;font-weight:600;margin-bottom:.4rem;display:block}
+  .field-error{color:var(--c-magenta-600);font-size:.78rem;margin-top:.35rem}
+</style>
+</head>
+<body data-area="dashboard" data-page="support" data-page-title="Support">
+<div id="toast-root"></div>
+<div id="dash-sidebar-root"></div>
+
+<div class="lg:ps-72 min-h-screen flex flex-col">
+  <div id="dash-topbar-root"></div>
+
+  <main id="main-content" class="flex-1 p-4 sm:p-6 lg:p-8">
+    <div class="max-w-5xl mx-auto grid lg:grid-cols-5 gap-8">
+
+      <form id="support-form" class="lg:col-span-3 ticket-card p-6 sm:p-8" novalidate>
+        <span class="ticket-clip" aria-hidden="true"></span>
+        <h2 class="font-display text-lg mb-6">SEND US A MESSAGE</h2>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="sm:col-span-2">
+            <label class="field-label" for="support-subject">What&rsquo;s this about</label>
+            <select class="field-input" id="support-subject" name="subject" data-validate="required">
+              <option value="">Select one&hellip;</option>
+              <option>An existing order</option>
+              <option>File or upload issue</option>
+              <option>Billing question</option>
+              <option>Something else</option>
+            </select>
+            <p class="field-error hidden" data-error-for="subject">Please choose a topic.</p>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="field-label" for="support-message">Message</label>
+            <textarea class="field-input" id="support-message" name="message" rows="5" data-validate="required|min:10|max:600" placeholder="Tell us what's going on, including any order number&hellip;"></textarea>
+            <p class="field-error hidden" data-error-for="message">Please enter at least 10 characters.</p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-6 w-full sm:w-auto">Send Message</button>
+      </form>
+
+      <aside class="lg:col-span-2 space-y-6">
+        <div class="info-panel">
+          <h3 class="font-display text-lg mb-4">CONTACT US DIRECTLY</h3>
+          <dl class="text-sm space-y-3" style="color:var(--text-muted)">
+            <div><dt class="font-semibold" style="color:var(--text)">Phone</dt><dd><a href="tel:+15551230199" class="hover:text-[var(--c-blue-600)]">+1 (555) 123-0199</a></dd></div>
+            <div><dt class="font-semibold" style="color:var(--text)">Email</dt><dd><a href="mailto:orders@sharplineprint.com" class="hover:text-[var(--c-blue-600)]">orders@sharplineprint.com</a></dd></div>
+            <div><dt class="font-semibold" style="color:var(--text)">Hours</dt><dd>Mon&ndash;Sat 8:00 AM&ndash;8:00 PM</dd></div>
+          </dl>
+        </div>
+        <div class="info-panel">
+          <h3 class="font-display text-lg mb-4">FAQ</h3>
+          <dl class="text-sm space-y-4" style="color:var(--text-muted)">
+            <div>
+              <dt class="font-semibold" style="color:var(--text)">How do I track an order?</dt>
+              <dd class="mt-1">Open <a href="dashboard-orders.html" class="hover:text-[var(--c-blue-600)]" style="color:var(--c-blue-text)">My Orders</a> and select the job to see its live status.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold" style="color:var(--text)">Can I change specs after submitting?</dt>
+              <dd class="mt-1">Message us here with the order number before it enters Printing and we&rsquo;ll update it.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold" style="color:var(--text)">What file types are accepted?</dt>
+              <dd class="mt-1">PDF, AI, PNG, JPG or DOCX, uploaded from New Print Job.</dd>
+            </div>
+          </dl>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/dashboard.js" defer></script>
+</body>
+</html>

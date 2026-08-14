@@ -358,7 +358,9 @@
   var DASH_NAV = [
     { page: "overview", href: "dashboard.html", label: "Overview", icon: '<path d="M3 3h8v8H3zM13 3h8v5h-8zM13 12h8v9h-8zM3 15h8v6H3z"/>' },
     { page: "new-order", href: "dashboard-new-order.html", label: "New Print Job", icon: '<path d="M12 5v14M5 12h14"/>' },
-    { page: "orders", href: "dashboard-orders.html", label: "My Orders", icon: '<path d="M4 6h16M4 12h16M4 18h10"/>' }
+    { page: "orders", href: "dashboard-orders.html", label: "My Orders", icon: '<path d="M4 6h16M4 12h16M4 18h10"/>' },
+    { page: "account", href: "dashboard-account.html", label: "Account Settings", icon: '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>' },
+    { page: "support", href: "dashboard-support.html", label: "Support", icon: '<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>' }
   ];
 
   function buildDashboardShell() {
@@ -384,7 +386,6 @@
       '</div>' +
       '<nav class="flex-1 overflow-y-auto p-3 space-y-1" aria-label="Dashboard">' + navItems + '</nav>' +
       '<div class="p-4 border-t space-y-3" style="border-color:var(--border)">' +
-        '<a href="index.html" class="text-sm flex items-center gap-2 hover:text-[var(--c-blue-600)]" style="color:var(--text-muted)">&larr; Back to website</a>' +
         '<button type="button" data-logout class="btn btn-outline btn-sm w-full">Log out</button>' +
       '</div>';
 

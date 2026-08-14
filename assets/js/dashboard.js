@@ -474,6 +474,50 @@
     }
   }
 
+  /* ---------------- Account settings / support forms ---------------- */
+  function initAccountForm() {
+    var profileForm = document.getElementById("account-form");
+    if (profileForm) {
+      var user = ensureAuth();
+      profileForm.fullName.value = user.name;
+      profileForm.email.value = user.email;
+      profileForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!window.validateForm(profileForm)) return;
+        setAuth({ name: profileForm.fullName.value.trim(), email: profileForm.email.value.trim() });
+        paintAccountChrome();
+        if (window.showToast) window.showToast("Profile updated.");
+      });
+    }
+
+    var passwordForm = document.getElementById("password-form");
+    if (passwordForm) {
+      passwordForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var valid = window.validateForm(passwordForm);
+        var pwErrorEl = passwordForm.querySelector('[data-error-for="confirmPassword"]');
+        if (passwordForm.newPassword.value !== passwordForm.confirmPassword.value) {
+          if (pwErrorEl) pwErrorEl.classList.remove("hidden");
+          valid = false;
+        } else if (pwErrorEl) pwErrorEl.classList.add("hidden");
+        if (!valid) return;
+        passwordForm.reset();
+        if (window.showToast) window.showToast("Password updated.");
+      });
+    }
+  }
+
+  function initSupportForm() {
+    var form = document.getElementById("support-form");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!window.validateForm(form)) return;
+      form.reset();
+      if (window.showToast) window.showToast("Message sent — we’ll reply within one business day.");
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initAuthForms();
     if (document.body.getAttribute("data-area") !== "dashboard") return;
@@ -485,6 +529,8 @@
     renderOrdersList("orders-list");
     renderOrderDetails("order-details");
     initNewOrderForm();
+    initAccountForm();
+    initSupportForm();
   });
 
   window.SharplineDashboard = { reorder: reorder, getOrders: getOrders };
